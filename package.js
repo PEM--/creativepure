@@ -17,7 +17,10 @@ Package.onUse(function(api) {
   api.addFiles(
     [
       'styles/main.styl',
+      'styles/animate.styl',
       'styles/ironprogress.styl',
-      'styles/links.styl'
+      'styles/links.styl',
+      'styles/input-plugins/jiro.styl',
+      'styles/input.styl'
     ], 'client');
 });
