@@ -9,6 +9,7 @@ meteor-platform
 # Development
 coffeescript
 mquandalle:jade
+mquandalle:stylus
 
 # Routing
 iron:router

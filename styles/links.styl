@@ -3,14 +3,17 @@
 @import 'client/styles/animations.import'
 
 a
-  reset-link()
+  outline none
+  text-decoration none
   font-weight bold
   color brandColor
   position relative
   display inline-block
   padding 0
   transition color defaultTransitionValue
-  hover-darken()
+
+  &:hover
+    color darken(brandColor, 30%)
 
   &:focus
     outline none
@@ -27,6 +30,6 @@ a
 
   &:hover::after, &:focus::after
     height 2px
-    rounded()
+    border-radius @height
     opacity 1
-    transform translateY(0px)
+    transform none
