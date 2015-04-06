@@ -1,0 +1,12 @@
+article(data-role='links')
+  h1 Links
+  p Example
+  .example
+    p: a(href='/') Go home
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, links)
+    cpLinks(brandColor, defaultTransitionValue)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    a(href='/') Go home

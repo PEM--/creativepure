@@ -1,0 +1,34 @@
+article(data-role='textInputs')
+  h1 Text inputs
+  p Example
+  .example
+    form
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Votre identifiant
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, input)
+    cpInput(bgColor, textColor, brandColor)
+    cpInputJiro(defaultTransitionValue, textColor, brandColor)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    form
+      span.input
+        input(type='email', id='username', name='username')
+        label(for='username'): span Votre identifiant
+  p Usage in <b>Coffee</b>
+  pre: code.coffee.
+    Template.myForm.rendered = ->
+      Meteor.setTimeout ->
+        @$ 'input[type=\'email\'], input[type=\'password\']'
+        .each (idx, el) =>
+          $el = @$ el
+          $el.addClass 'filled' unless $el.val().length is 0
+      , 300
+      
+    Template.myForm.events
+      'focus input[type=\'email\'], focus input[type=\'password\']': (e, t) ->
+        (t.$ e.target).addClass 'filled'
+      'blur input[type=\'email\'], blur input[type=\'password\']': (e, t) ->
+        (t.$ e.target).removeClass 'filled' if e.target.value.length is 0  
