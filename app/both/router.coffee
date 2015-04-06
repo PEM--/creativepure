@@ -11,5 +11,6 @@ Router.configure
 # Route declaration
 Router.map ->
   @route '/home', path: '/'
-  @route '/text-inputs'
   @route '/links'
+  @route '/iron-router'
+  @route '/text-inputs'
