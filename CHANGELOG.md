@@ -1,4 +1,4 @@
-## 0.1.0 - Initial commit
+## 0.1.X - Initial commit
 Covered HTML elements:
 * Iron progress
 * Select
