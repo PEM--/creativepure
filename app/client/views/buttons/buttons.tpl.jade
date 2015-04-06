@@ -1,0 +1,36 @@
+article(data-role='buttons')
+  h1 Small buttons with clicked animations
+  p Example
+  .example
+    button.small#access(type='button')
+      i.fa.fa-chevron-circle-right.fa-2x
+      span Access
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, buttonSmall)
+    cpButtonSmall(brandColor, buttonSmallSize)
+    cpButtonSmallBoris(brandColor)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    button.small(type='button')
+      i.fa.fa-chevron-circle-right.fa-2x
+      span Access
+  p Usage in <b>Coffee</b>
+  pre: code.coffee.
+    @ANIMATION_END_EVENT = 'oanimationend animationend webkitAnimationEnd \
+      otransitionend oTransitionEnd msTransitionEnd mozAnimationEnd \
+      MSAnimationEnd'
+
+    @TRANSITION_END_EVENT = 'webkitTransitionEnd transitionend oTransitionEnd'
+
+    Template.myForm.events
+      'click button': (e, t) ->
+        e.preventDefault()
+        $button = t.$ '#access'
+        $button.addClass 'clicked'
+        $button.on ANIMATION_END_EVENT, ->
+          $button
+            .off ANIMATION_END_EVENT
+            .removeClass 'clicked'
+          checkAndAuthenticate (t.$ '[name=\'username\']'), \
+            (t.$ '[name=\'password\']')
