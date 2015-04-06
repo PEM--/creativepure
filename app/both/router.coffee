@@ -6,7 +6,7 @@ Router.configure
     Meteor.setTimeout ->
       $('pre code').each (i, node) ->
         hljs.highlightBlock node
-    , 300
+    , 16
 
 # Route declaration
 Router.map ->
@@ -14,3 +14,4 @@ Router.map ->
   @route '/links'
   @route '/iron-router'
   @route '/text-inputs'
+  @route '/buttons'

@@ -1,39 +1,86 @@
 // http://tympanus.net/codrops/?p=23217
-@import 'nib'
-@import 'client/styles/*.import'
+cpButtonSmall(brandColor, buttonSmallSize)
+  button.small
+    position relative
+    display inline-block
+    margin 1em
+    padding 0
+    border none
+    background none
+    color brandColor
+    font-size 1.4em
+    overflow visible
+    transition color .7s ease-out
+    -webkit-tap-highlight-color rgba(0, 0, 0, 0)
 
-button.small
-  position relative
-  display inline-block
-  margin 1em
-  padding 0
-  border none
-  background none
-  color brandColor
-  font-size 1.4em
-  overflow visible
-  transition color .7s ease-out
-  -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+    &.clicked, &:focus
+      outline none
+      color lighten(brandColor, 30%)
 
-  &.clicked, &:focus
-    outline none
-    color lighten(brandColor, 30%)
+    >i
+      display: block
 
-  >i
-    display: block
+    >span
+      position absolute
+      opacity 0
+      pointer-events none
 
-  >span
-    position absolute
-    opacity 0
-    pointer-events none
+    &::after
+      absolute top 50% left 50%
+      size buttonSmallSize
+      margin (-(buttonSmallSize/2)) 0 0 (-(buttonSmallSize/2))
+      border-radius 50%
+      content ''
+      opacity 0
+      pointer-events none
 
-  &::after
-    absolute top 50% left 50%
-    size buttonSmallSize
-    margin (-(buttonSmallSize/2)) 0 0 (-(buttonSmallSize/2))
-    border-radius 50%
-    content ''
-    opacity 0
-    pointer-events none
+cpButtonSmallBoris(brandColor)
+  button.small
+    &::after
+      background rgba(lighten(brandColor, 30%), .8)
 
-@import 'client/styles/button-small-plugins/ivana.import'
+    &.clicked::after
+      animation button-small-boris .3s ease-out forwards
+
+  @keyframes button-small-boris
+    0%
+      transform scale3d(.3, .3, 1)
+    25%, 50%
+      opacity 1
+    to
+      opacity 0
+      transform scale3d(1.2, 1.2, 1)
+
+cpButtonSmallIvana(brandColor, buttonSmallSize)
+  button.small
+    &::before
+      absolute top 50% left 50%
+      size buttonSmallSize
+      margin (-(buttonSmallSize/2)) 0 0 (-(buttonSmallSize/2))
+      border-radius 50%
+      content ''
+      opacity 0
+      pointer-events none
+
+    &::before, &::after
+      box-shadow 0 0 0 2px rgba(lighten(brandColor, 30%), .8)
+    &.clicked::before
+      animation button-small-ivana1 .5s forwards
+    &.clicked::after
+      animation button-small-ivana2 .5s forwards
+
+  @keyframes button-small-ivana1
+    0%
+      opacity 1
+      transform scale3d(.3, .3, 1)
+    100%
+      opacity 0
+      transform scale3d(.8, .8, 1)
+
+  @keyframes button-small-ivana2
+    0%
+      opacity 1
+      transform scale3d(.3, .3, 1)
+    50, 100%
+      opacity 0
+      transform scale3d(2, 2, 1)
