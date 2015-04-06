@@ -1,0 +1,55 @@
+@import 'nib'
+@import '/client/styles/*.import'
+
+checkboxHeight = 1.5em
+
+calc(prop, val)
+  {prop} s("calc(%s)", val)
+
+form
+  >span.checkbox
+    z-index 1
+    display inline-block
+    calc('width', s("100% - %s", 2em))
+    margin-top 2em
+    position relative
+    max-width 400px
+    vertical-align top
+    user-select none
+    >label
+      display inline-block
+      float left
+      color brandColor
+      font-weight bold
+      font-size 70.25%
+      padding 2em .85em 1em .85em
+    input[type='checkbox']
+      outline none
+      background rgba(brandDanger, .3)
+      border-radius checkboxHeight
+      cursor pointer
+      size 2*checkboxHeight checkboxHeight
+      absolute bottom
+      calc('left', s("100% - %s", 2*checkboxHeight))
+      position absolute
+      appearance none
+      transition defaultTransitionValue
+      &::after
+        border 2px solid brandColor
+        background bgColor
+        border-radius checkboxHeight
+        color rgba(brandSuccess, 0)
+        font-family FontAwesome
+        text-align center
+        content '\f00c'
+        display block
+        size checkboxHeight
+        relative top left
+        transition defaultTransitionValue
+        line-height 0.9*checkboxHeight
+      &:checked
+        background rgba(brandSuccess, .3)
+        padding-left checkboxHeight
+        padding-right 0
+      &:checked::after
+        color rgba(brandSuccess, 1)

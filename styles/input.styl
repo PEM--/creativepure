@@ -1,0 +1,42 @@
+// http://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/
+@import 'nib'
+@import '/client/styles/*.import'
+
+form
+  >span.input
+    position relative
+    z-index 1
+    display inline-block
+    max-width 400px
+    width calc(100% - 2em)
+    vertical-align top
+    >input
+      position relative
+      display block
+      float right
+      padding .8em
+      width 60%
+      border none
+      border-radius 0
+      background bgColor
+      color textColor
+      font-weight bold
+      -webkit-appearance none
+      &:focus
+        outline none
+    >label
+      display inline-block
+      float right
+      padding 0 1em
+      width 40%
+      color brandColor
+      font-weight bold
+      font-size 70.25%
+      user-select none
+      span
+        position relative
+        display block
+        padding 1.6em 0
+        width 100%
+
+@import '/client/styles/input-plugins/jiro.import'

@@ -1,0 +1,44 @@
+@import 'nib'
+@import '/client/styles/*.import'
+
+form
+  >span.input
+    >input
+      z-index 10
+      width 100%
+      background transparent
+      color bgColor
+      opacity 0
+      transition opacity .3s
+    >label
+      position relative
+      width 100%
+      color brandColor
+      text-align left
+      >span
+        pointer-events none
+        padding .75em 0
+      &::before, &::after
+        content ''
+        transition transform defaultTransitionValue
+      &::before
+        absolute bottom 100% left 0
+        size 100% 4em
+        background lighten(brandColor, 15%)
+        transform perspective(1000px) rotate3d(1, 0, 0, 90deg)
+        transform-origin 50% 100%
+      &::after
+        absolute top left
+        size 100% .25em
+        border-radius roundCorner
+        background brandColor
+        transform-origin 50% 0%
+
+    >input:focus, >input.filled
+      opacity 1
+      transition-delay .3s
+      +label
+        &::before
+          transform perspective(1000px) rotate3d(1, 0, 0, 0deg)
+        &::after
+          transform perspective(1000px) rotate3d(1, 0, 0, -90deg)

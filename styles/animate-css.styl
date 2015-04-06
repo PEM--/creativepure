@@ -1,0 +1,62 @@
+@import '/client/styles/*import'
+
+// Excepts from https://github.com/slang800/animate-stylus
+@keyframes fadeInDown
+  0%
+    opacity 0
+    transform translateY(-20px)
+  100%
+    opacity 1
+    transform translateY(0)
+
+@keyframes fadeInRight
+  0%
+    opacity 0
+    transform translateX(20px)
+  100%
+    opacity 1
+    transform translateX(0)
+.fadeInRight
+  animation-name fadeInRight
+  longAnimation()
+
+@keyframes fadeOutLeft
+  0%
+    opacity 1
+    transform translateX(0)
+  100%
+    opacity 0
+    transform translateX(20px)
+.fadeOutLeft
+  animation-name fadeOutLeft
+  animation-fill-mode forwards
+  longAnimation()
+
+@keyframes fadeIn
+  0%
+    opacity 0
+  100%
+    opacity 1
+.fadeIn
+  animation-name fadeIn
+  longAnimation()
+
+@keyframes fadeOut
+  0%
+    opacity 1
+  100%
+    opacity 0
+.fadeOut
+  animation-name fadeOut
+  longAnimation()
+
+@keyframes shake
+  0%, 100%
+    transform translate3d(0, 0, 0)
+  10%, 30%, 50%, 70%, 90%
+    transform translate3d(-10px, 0, 0)
+  20%, 40%, 60%, 80%
+    transform translate3d(10px, 0, 0)
+.shake
+  animation-name shake
+  longAnimation()

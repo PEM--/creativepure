@@ -1,0 +1,51 @@
+@import 'nib'
+@import 'typographic'
+@import 'jeet'
+@import '/client/styles/*.import'
+
+// Normalize CSS using Axis
+normalize-css()
+
+monoFont = optima
+
+// Set fonts and default colors
+t-headers(monoFont)
+html, body
+  background-color bgColor
+  color textColor
+  font-family monoFont
+  transition all defaultTransitionValue
+  fontSize()
+
+*, *::after, *::before
+  // Globally set the sizing behavior
+  box-sizing border-box
+  // Ensure font's antialising
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -webkit-touch-callout none
+
+// Set page height
+html, body
+  height 100%
+
+// 960 the complete site
+// debug jeet: edit()
+section
+  margin-top 5px
+  center(maxSize)
+  transition all defaultTransitionValue
+  height 100%
+
+// Entrance animation
+article
+  animation-name fadeInDown
+  longAnimation()
+
+// Styles on text content
+p
+  text-align justify
+
+::selection
+  color bgColor
+  background brandColor

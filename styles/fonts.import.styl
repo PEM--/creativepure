@@ -1,0 +1,12 @@
+@import '/client/styles/breakpoints.import'
+
+fontSize()
+  fs 11px
+  +above('small')
+    fs @font-size + 1
+  +above('medium')
+    fs @font-size + 2
+  +above('desktop')
+    fs @font-size + 3
+  +above('hd')
+    fs @font-size + 4

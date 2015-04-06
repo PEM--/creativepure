@@ -1,0 +1,22 @@
+@import 'nib'
+@import '/client/styles/*.import'
+
+button.creative
+  padding 80px 20px 20px 20px
+  border-radius roundCorner
+  border 1px solid brandColor
+  box-shadow 0 3px darken(brandColor, 30%)
+
+  &:active, &:hover
+    box-shadow 0 3px darken(brandColor, 50%)
+
+  &::before
+    size 100% 60px
+    line-height 60px
+    background lighten(brandColor, 45%)
+    color darken(brandColor, 20%)
+    border-radius roundCorner roundCorner 0 0
+
+  &:active::before, &:hover::before
+    background lighten(brandColor, 35%)
+    color darken(brandColor, 40%)

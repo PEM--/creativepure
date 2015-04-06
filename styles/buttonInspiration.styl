@@ -1,0 +1,38 @@
+@import 'nib'
+@import '/client/styles/*.import'
+
+button.inspiration
+  float left
+  min-width 150px
+  max-width @min-width + 200
+  display block
+  margin 2em 0 0 0
+  padding 1em 2em
+  background rgba(brandColor, .1)
+  vertical-align middle
+  position relative
+  z-index 1
+  -webkit-backface-visibility hidden
+  color brandColor
+  border-radius roundCorner
+  border 1px solid brandColor
+  box-shadow 0 0 0 brandColor
+  transition box-shadow defaultTransitionValue, color defaultTransitionValue, border-color defaultTransitionValue, background-color defaultTransitionValue
+  user-select none
+  &:focus
+    outline none
+    box-shadow 0 1px 3px brandColor
+    transition box-shadow 1s
+  >span
+    vertical-align middle
+    transition color 1s
+  &:active
+    top 2px
+  &:hover
+    color darken(@color, 30%)
+    border-color @color
+    background rgba(brandColor, .3)
+    >span
+      color @color
+
+@import '/client/styles/button-inspiration/ujarak.import'

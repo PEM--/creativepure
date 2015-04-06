@@ -1,0 +1,12 @@
+@import '/client/styles/colors.import'
+
+progressColor = brandColor
+
+#iron-router-progress
+  height 1px
+  background-color progressColor
+  box-shadow 0 0 3px progressColor
+
+#iron-router-progress.spinner:before
+  border 1px solid brandColor
+  border-color brandColor

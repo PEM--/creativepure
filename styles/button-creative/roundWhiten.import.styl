@@ -1,0 +1,35 @@
+@import 'nib'
+@import '/client/styles/*.import'
+
+button.creative
+  padding 25px 60px 25px 120px
+  border 1px solid brandColor
+  border-radius roundCorner
+
+  &::before
+    background lighten(brandColor, 45%)
+    color darken(brandColor, 30%)
+    z-index 2
+    border-radius roundCorner 0 0 roundCorner
+
+  &:after
+    size 20px
+    background lighten(brandColor, 45%)
+    z-index 1
+    left 55px
+    top 50%
+    margin -10px 0 0 -10px
+    transform rotate(45deg)
+    transition transform defaultTransitionValue
+
+  &:active
+    top 0
+    &::before
+      color darken(brandColor, 30%)
+
+  &:active::before, &:hover::before
+    background lighten(brandColor, 35%)
+    color darken(brandColor, 40%)
+  &:active::after, &:hover::after
+    background lighten(brandColor, 35%)
+    transform rotate(45deg) translate3d(4px, -4px, 0)

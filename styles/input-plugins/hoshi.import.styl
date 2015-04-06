@@ -1,0 +1,56 @@
+@import 'nib'
+@import '/client/styles/*.import'
+
+form
+  >span.input
+    overflow hidden
+
+    >input
+    	margin-top 1em
+    	padding .85em .15em
+    	width 100%
+    	background transparent
+
+    >label
+      absolute bottom left
+      padding 0 .25em
+      size 100% calc(100% - 1em)
+      text-align left
+      pointer-events none
+
+      >span
+    	  position absolute
+
+      &::before, &::after
+      	content ''
+      	absolute top left
+      	size 100% calc(100% - 10px)
+      	border-bottom 1px solid lighten(brandColor, 30%)
+      &::after
+      	margin-top 2px
+      	border-bottom 4px solid brandColor
+      	transform translate3d(-100%, 0, 0)
+      	transition transform defaultTransitionValue
+      &.info::after
+      	border-color brandInfo
+      &.warning::after
+      	border-color brandWarning
+      &.danger::after
+      	border-color brandDanger
+
+    >input:focus +label, >input.filled +label
+      &::after
+        transform translate3d(0, 0, 0)
+      >span
+  	    animation inputHoshi 0.3s ease-out forwards
+
+@keyframes inputHoshi
+	50%
+		opacity 0
+		transform translate3d(1em, 0, 0)
+	51%
+		opacity 0
+		transform translate3d(-1em, -40%, 0)
+	100%
+		opacity 1
+		transform translate3d(0, -40%, 0)
