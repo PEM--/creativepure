@@ -14,5 +14,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.1');
   api.use('mquandalle:stylus');
   api.use('fortawesome:fontawesome');
-  api.addFiles('styles/links.styl', 'client');
+  api.addFiles(
+    [
+      'styles/main.styl',
+      'styles/ironprogress.styl',
+      'styles/links.styl'
+    ], 'client');
 });

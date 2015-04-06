@@ -1,0 +1,33 @@
+@import 'client/styles/colors.import'
+
+article[data-role='loading']
+  h1, p
+    text-align center
+
+  .spinner
+    margin 20px auto
+    size 50px 30px
+    text-align center
+    font-size 10px
+
+    > div
+      background-color brandColor
+      height 100%
+      width 6px
+      display inline-block
+      animation stretchdelay 1.2s infinite ease-in-out
+
+    .rect2
+      animation-delay -1.1s
+    .rect3
+      animation-delay -.9s
+    .rect4
+      animation-delay -.7s
+    .rect5
+      animation-delay -.5s
+
+  @keyframes stretchdelay
+    0%, 40%, 100%
+      transform scaleY(0.4)
+    20%
+      transform scaleY(1.0)
