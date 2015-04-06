@@ -1,4 +1,10 @@
 h2 Text inputs
+p Example
+.example
+  form
+    span.input
+      input(type='email', id='username', name='username', autocapitalize='off', autofocus, minlength='5', maxlength='200')
+      label(for='username'): span Votre identifiant
 p Usage in <b>Jade</b>
 pre: code.jade.
   form
@@ -20,8 +26,3 @@ pre: code.coffee.
       (t.$ e.target).addClass 'filled'
     'blur input[type=\'email\'], blur input[type=\'password\']': (e, t) ->
       (t.$ e.target).removeClass 'filled' if e.target.value.length is 0  
-p Render
-form
-  span.input
-    input(type='email', id='username', name='username', autocapitalize='off', autofocus, minlength='5', maxlength='200')
-    label(for='username'): span Votre identifiant
