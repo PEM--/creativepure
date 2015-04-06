@@ -1,0 +1,28 @@
+@import 'client/styles/*.import'
+
+article[data-role='home']
+  display flex
+  flex-wrap wrap
+  height 100%
+  background dimgray
+  justify-content center
+  align-items center
+  align-content center
+  h1
+    width 100%
+    text-align center
+    color white
+    font-size 3em
+    opacity 0
+    animation fadeInDown .8s ease-in-out forwards
+  p
+    width 100%
+    text-align center
+    color white
+    font-weight bold
+  p:first-child
+    font-size 2em
+    animation fadeInDown .8s .8s ease-in-out forwards
+  p:not(:first-child)
+    opacity 0
+    animation fadeInDown 1.6s .8s ease-in-out forwards
