@@ -5,5 +5,18 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
+
+# Development
+coffeescript
+mquandalle:jade
+
+# Routing
+iron:router
+multiply:iron-router-progress
+
+# Security
+browser-policy
+matteodem:easy-security
+
+# Package example
+pierreeric:creativepure
