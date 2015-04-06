@@ -1,4 +1,5 @@
 @import 'client/styles/*.import'
+@import 'jeet'
 
 @import s(basePath, main)
 @import s(basePath, animate)
@@ -23,3 +24,6 @@ cpLinks(brandColor, defaultTransitionValue)
 
 cpInput(bgColor, textColor, brandColor)
 cpInputJiro(defaultTransitionValue, textColor, brandColor)
+
+article:not([data-role='home'])
+  center(maxSize)
