@@ -1,21 +1,34 @@
-@import 'client/styles/*import'
-
 // Excepts from https://github.com/slang800/animate-stylus
+delayedAnimation()
+  opacity 0
+  animation-timing-function ease-out
+  animation-duration .8s
+  animation-delay .2s
+  animation-fill-mode forwards
+
+defaultAnimation()
+  animation-timing-function ease-out
+  animation-duration .3s
+
+longAnimation()
+  animation-timing-function ease-out
+  animation-duration .8s
+
 @keyframes fadeInDown
   0%
     opacity 0
-    transform translateY(-20px)
+    transform translate3d(0, -20px, 0)
   100%
     opacity 1
-    transform translateY(0)
+    transform none
 
 @keyframes fadeInRight
   0%
     opacity 0
-    transform translateX(20px)
+    transform translate3d(20px, 0, 0)
   100%
     opacity 1
-    transform translateX(0)
+    transform none
 .fadeInRight
   animation-name fadeInRight
   longAnimation()
@@ -23,10 +36,10 @@
 @keyframes fadeOutLeft
   0%
     opacity 1
-    transform translateX(0)
+    transform none
   100%
     opacity 0
-    transform translateX(20px)
+    transform translate3d(20px, 0, 0)
 .fadeOutLeft
   animation-name fadeOutLeft
   animation-fill-mode forwards
@@ -52,7 +65,7 @@
 
 @keyframes shake
   0%, 100%
-    transform translate3d(0, 0, 0)
+    transform none
   10%, 30%, 50%, 70%, 90%
     transform translate3d(-10px, 0, 0)
   20%, 40%, 60%, 80%

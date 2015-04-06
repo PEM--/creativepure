@@ -11,6 +11,9 @@ coffeescript
 mquandalle:jade
 mquandalle:stylus
 
+# Other styles
+fortawesome:fontawesome
+
 # Routing
 iron:router
 multiply:iron-router-progress
