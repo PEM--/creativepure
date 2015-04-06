@@ -12,20 +12,25 @@ article[data-role='home']
     width 100%
     text-align center
     color white
+    font-weight 100
     font-size 3em
     opacity 0
     animation fadeInDown .8s ease-in-out forwards
+    font-family futura
+    em
+      font-weight 700
+      color brandColor
   p
     width 100%
     text-align center
     color white
-    font-weight bold
-  p:first-child
-    font-size 2em
-    animation fadeInDown .8s .8s ease-in-out forwards
-  p:not(:first-child)
+    font-size 1.7em
     opacity 0
-    animation fadeInDown 1.6s .8s ease-in-out forwards
+    animation fadeInDown .8s .8s ease-in-out forwards
+    &:last-child
+      font-weight bold
+      font-size 1em
+      animation-delay 1.6s
 
 article[data-role='usage']
   @import 'jeet'
