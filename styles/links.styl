@@ -1,31 +1,32 @@
-a
-  outline none
-  text-decoration none
-  font-weight bold
-  color brandColor
-  position relative
-  display inline-block
-  padding 0
-  transition color defaultTransitionValue
-
-  &:hover
-    color darken(brandColor, 30%)
-
-  &:focus
+cpLinks(brandColor, defaultTransitionValue)
+  a
     outline none
-    box-shadow 0 2px 0 lighten(brandColor, 50%)
+    text-decoration none
+    font-weight bold
+    color brandColor
+    position relative
+    display inline-block
+    padding 0
+    transition color defaultTransitionValue
 
-  &::after
-    absolute bottom left
-    size 100% 1px
-    background brandColor
-    content ''
-    opacity 0
-    transition height defaultTransitionValue, opacity defaultTransitionValue, transform defaultTransitionValue
-    transform translateY(10px)
+    &:hover
+      color darken(brandColor, 30%)
 
-  &:hover::after, &:focus::after
-    height 2px
-    border-radius @height
-    opacity 1
-    transform none
+    &:focus
+      outline none
+      box-shadow 0 2px 0 lighten(brandColor, 50%)
+
+    &::after
+      absolute bottom left
+      size 100% 1px
+      background brandColor
+      content ''
+      opacity 0
+      transition height defaultTransitionValue, opacity defaultTransitionValue, transform defaultTransitionValue
+      transform translateY(10px)
+
+    &:hover::after, &:focus::after
+      height 2px
+      border-radius @height
+      opacity 1
+      transform none

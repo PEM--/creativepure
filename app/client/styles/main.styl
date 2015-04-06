@@ -1,8 +1,13 @@
 @import 'client/styles/*.import'
 
+@import s(basePath, main)
+@import s(basePath, animate)
+@import s(basePath, ironprogress)
+
 pre
   pre()
   font-size .8em
+  line-height 1em
   border-radius roundCorner
   background #282B2E
   color bgColor
@@ -12,12 +17,9 @@ pre
   border 1px solid textColor
   padding 1em
 
-@import '.meteor/local/build/programs/web.browser/packages/pierreeric_creativepure/styles/main'
-@import '.meteor/local/build/programs/web.browser/packages/pierreeric_creativepure/styles/animate'
+@import s(basePath, links)
+cpLinks(brandColor, defaultTransitionValue)
 
 
 cpInput(bgColor, textColor, brandColor)
 cpInputJiro(defaultTransitionValue, textColor, brandColor)
-
-
-@import '.meteor/local/build/programs/web.browser/packages/pierreeric_creativepure/styles/ironprogress'

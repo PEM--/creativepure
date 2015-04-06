@@ -16,8 +16,8 @@ Package.onUse(function(api) {
     [
       'styles/main.styl',
       'styles/animate.styl',
-      'styles/ironprogress.styl'
+      'styles/ironprogress.styl',
       //'styles/input.styl',
-      //'styles/links.styl'
+      'styles/links.styl'
     ], 'client');
 });
