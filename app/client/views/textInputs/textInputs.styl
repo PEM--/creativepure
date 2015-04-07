@@ -2,5 +2,14 @@
 
 article[data-role='textInputs']
   @import s(basePath, input)
-  cpInput(bgColor, textColor, brandColor)
-  cpInputJiro(textColor, brandColor)
+  .example
+    cpInput(bgColor, textColor, brandColor)
+    &.jiro
+      cpInputJiro(textColor, brandColor)
+    &.haruki
+      padding-top 3em
+      cpInputHaruki(textColor, brandColor)
+    &.hoshi
+      cpInputHoshi(textColor, brandColor)
+    &.yoko
+      cpInputYoko(textColor, brandColor)
