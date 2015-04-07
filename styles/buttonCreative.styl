@@ -1,67 +1,117 @@
 // http://tympanus.net/codrops/2013/06/13/creative-button-styles/
-@import 'nib'
-@import 'client/styles/*.import'
 
-button.creative
-  border none
-  cursor pointer
-  display inline-block
-  margin-top 1.5em
-  letter-spacing 1px
-  font-weight 700
-  outline none
-  position relative
-  transition all defaultTransitionValue
-  background brandColor
-  color bgColor
-  &:hover
-    background darken(@background, 20%)
-  &:active, &:focus
-    background darken(@background, 30%)
-  &:active
-    top 2px
-  &::after
-    content ''
-    position absolute
-    z-index -1
-    transition all defaultTransitionValue
-
-  &::before
-    font-family FontAwesome
-    font-style normal
-    font-weight normal
-    font-variant normal
-    text-transform none
+cpButtonCreative(bgColor, brandColor)
+  button.creative
+    border none
+    cursor pointer
+    display inline-block
+    margin-top 1.5em
+    letter-spacing 1px
+    font-weight 700
+    outline none
     position relative
     transition all defaultTransitionValue
-    absolute top left
-    size 60px 100%
-    font-size 140%
-    line-height 3
+    background brandColor
+    color bgColor
+    &:hover
+      background darken(@background, 20%)
+    &:active, &:focus
+      background darken(@background, 30%)
+    &:active
+      top 2px
+    &::after
+      content ''
+      position absolute
+      z-index -1
+      transition all defaultTransitionValue
+    &::before
+      font-family FontAwesome
+      font-style normal
+      font-weight normal
+      font-variant normal
+      text-transform none
+      position relative
+      transition all defaultTransitionValue
+      absolute top left
+      size 60px 100%
+      font-size 140%
+      line-height 3
+  button[data-role='connect'].creative
+    &::before
+      content '\f090'
+  button[data-role='disconnect'].creative
+    &::before
+      content '\f08b'
+  button[data-role='add'].creative
+    &::before
+      content '\f055'
+  button[data-role='remove'].creative
+    &::before
+      content '\f1f8'
+  button[data-role='validate'].creative
+    &::before
+      content '\f00c'
+  button[data-role='modify'].creative
+    &::before
+      content '\f040'
+  button[data-role='user'].creative
+    &::before
+      content '\f007'
+  button[data-role='doctor'].creative
+    &::before
+      content '\f0f0'
 
-button[data-role='connect'].creative
-  &::before
-    content '\f090'
-button[data-role='disconnect'].creative
-  &::before
-    content '\f08b'
-button[data-role='add'].creative
-  &::before
-    content '\f055'
-button[data-role='remove'].creative
-  &::before
-    content '\f1f8'
-button[data-role='validate'].creative
-  &::before
-    content '\f00c'
-button[data-role='modify'].creative
-  &::before
-    content '\f040'
-button[data-role='user'].creative
-  &::before
-    content '\f007'
-button[data-role='doctor'].creative
-  &::before
-    content '\f0f0'
+cpButtonCreativeRound(bgColor)
+  button.creative
+    padding 25px 60px 25px 120px
+    border-radius roundCorner
+    &::before
+      border-right 2px solid bgColor
 
-@import 'client/styles/button-creative/roundWhiten.import'
+cpButtonCreativeRoundWhiten(brandColor)
+  button.creative
+    padding 25px 60px 25px 120px
+    border 1px solid brandColor
+    border-radius roundCorner
+    &::before
+      background lighten(brandColor, 45%)
+      color darken(brandColor, 30%)
+      z-index 2
+      border-radius roundCorner 0 0 roundCorner
+    &:after
+      size 20px
+      background lighten(brandColor, 45%)
+      z-index 1
+      left 55px
+      top 50%
+      margin -10px 0 0 -10px
+      transform rotate(45deg)
+      transition transform defaultTransitionValue
+    &:active
+      top 0
+      &::before
+        color darken(brandColor, 30%)
+    &:active::before, &:hover::before
+      background lighten(brandColor, 35%)
+      color darken(brandColor, 40%)
+    &:active::after, &:hover::after
+      background lighten(brandColor, 35%)
+      transform rotate(45deg) translate3d(4px, -4px, 0)
+
+cpButtonCreativeVertical(brandColor)
+  button.creative
+    padding 80px 20px 20px 20px
+    border-radius roundCorner
+    border 1px solid brandColor
+    box-shadow 0 3px darken(brandColor, 30%)
+    &:active, &:hover
+      box-shadow 0 3px darken(brandColor, 50%)
+    &::before
+      size 100% 60px
+      line-height 60px
+      background lighten(brandColor, 45%)
+      color darken(brandColor, 20%)
+      border-radius roundCorner roundCorner 0 0
+    &:active::before, &:hover::before
+      background lighten(brandColor, 35%)
+      color darken(brandColor, 40%)

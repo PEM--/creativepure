@@ -31,7 +31,6 @@ article(data-role='buttons')
             .off ANIMATION_END_EVENT
             .removeClass 'clicked'
           NowDoSomething()
-
   h2 Ivana
   p The second example show you how to use the Ivana plugin:
   .example.small.ivana
@@ -42,3 +41,38 @@ article(data-role='buttons')
   pre: code.stylus.
     // The Ivana plugin
     cpButtonSmallIvana(brandColor)
+  
+  h1 Creative buttons
+  h2 Round
+  p.
+    These huge buttons are simple ones with icons on them. The first flavour is
+    a rounded button that gets a bit darker when hovering upon.
+  .example.creative.round
+    button.creative(data-role='add') Add something
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, buttonCreative)
+    cpButtonCreative(bgColor, brandColor)
+    // The Round plugin
+    cpButtonCreativeRound(brandColor)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    button.creative(data-role='add') Add something
+  h3 Round & whiten
+  p.
+    Not far from the former one, the round whiten plugin adds a bit of contrast
+    with a subtle hover effect leading the user to the message it carries.
+  .example.creative.roundwhiten
+    button.creative(data-role='validate') Validate to go further
+  p The only difference in usage is in the <b>Stylus</b>:
+  pre: code.stylus.
+    // The Round & Whiten plugin
+    cpButtonCreativeRoundWhiten(brandColor)
+  h3 Vertical
+  p Buttons doesn't have to be horizontal.
+  .example.creative.vertical
+    button.creative(data-role='user') Modify your profile
+  p As before, the only difference in usage is in the <b>Stylus</b>:
+  pre: code.stylus.
+    // The Vertical plugin
+    cpButtonCreativeVertical(brandColor)

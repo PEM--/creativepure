@@ -35,8 +35,8 @@ article[data-role='home']
 @import s(basePath, input)
 @import s(basePath, buttonSmall)
 
-redish = #741616
-greenish = #236a20
+redish = #9d0c0c
+greenish = #43903b
 
 article[data-role='usage']
   .example
@@ -53,6 +53,7 @@ article[data-role='usage']
       cpButtonSmall(redish)
       cpButtonSmallBoris(redish)
       form
+        background lighten(redish, 70%)
         border 1px solid redish
         >span:first-of-type
           margin-top 1em
@@ -68,6 +69,7 @@ article[data-role='usage']
       cpButtonSmall(greenish)
       cpButtonSmallIvana(greenish)
       form
+        background lighten(greenish, 70%)
         border 1px solid greenish
         >span:first-of-type
           margin-top 0
