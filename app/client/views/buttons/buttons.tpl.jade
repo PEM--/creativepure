@@ -8,7 +8,7 @@ article(data-role='buttons')
   p Usage in <b>Stylus</b>
   pre: code.stylus.
     @import s(basePath, buttonSmall)
-    cpButtonSmall(brandColor, buttonSmallSize)
+    cpButtonSmall(brandColor)
     cpButtonSmallBoris(brandColor)
   p Usage in <b>Jade</b>
   pre: code.jade.
@@ -17,12 +17,6 @@ article(data-role='buttons')
       span Access
   p Usage in <b>Coffee</b>
   pre: code.coffee.
-    @ANIMATION_END_EVENT = 'oanimationend animationend webkitAnimationEnd \
-      otransitionend oTransitionEnd msTransitionEnd mozAnimationEnd \
-      MSAnimationEnd'
-
-    @TRANSITION_END_EVENT = 'webkitTransitionEnd transitionend oTransitionEnd'
-
     Template.myForm.events
       'click button': (e, t) ->
         e.preventDefault()

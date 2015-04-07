@@ -1,5 +1,5 @@
 // http://tympanus.net/codrops/?p=23217
-cpButtonSmall(brandColor, buttonSmallSize)
+cpButtonSmall(brandColor)
   button.small
     position relative
     display inline-block
@@ -18,7 +18,8 @@ cpButtonSmall(brandColor, buttonSmallSize)
       color lighten(brandColor, 30%)
 
     >i
-      display: block
+      pointer-events none
+      display block
 
     >span
       position absolute
@@ -51,7 +52,7 @@ cpButtonSmallBoris(brandColor)
       opacity 0
       transform scale3d(1.2, 1.2, 1)
 
-cpButtonSmallIvana(brandColor, buttonSmallSize)
+cpButtonSmallIvana(brandColor)
   button.small
     &::before
       absolute top 50% left 50%
@@ -63,24 +64,24 @@ cpButtonSmallIvana(brandColor, buttonSmallSize)
       pointer-events none
 
     &::before, &::after
-      box-shadow 0 0 0 2px rgba(lighten(brandColor, 30%), .8)
+      box-shadow 0 0 2px brandColor
     &.clicked::before
       animation button-small-ivana1 .5s forwards
     &.clicked::after
       animation button-small-ivana2 .5s forwards
 
-  @keyframes button-small-ivana1
-    0%
-      opacity 1
-      transform scale3d(.3, .3, 1)
-    100%
-      opacity 0
-      transform scale3d(.8, .8, 1)
+@keyframes button-small-ivana1
+  0%
+    opacity 1
+    transform scale3d(.3, .3, 1)
+  100%
+    opacity 0
+    transform scale3d(.8, .8, 1)
 
-  @keyframes button-small-ivana2
-    0%
-      opacity 1
-      transform scale3d(.3, .3, 1)
-    50, 100%
-      opacity 0
-      transform scale3d(2, 2, 1)
+@keyframes button-small-ivana2
+  0%
+    opacity 1
+    transform scale3d(.3, .3, 1)
+  50, 100%
+    opacity 0
+    transform scale3d(2, 2, 1)

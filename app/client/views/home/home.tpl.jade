@@ -8,7 +8,44 @@ article(data-role='home')
     a(href='http://stylus-lang.com/', target='_blank') Stylus.
 
 article(data-role='usage')
-  h1: a(href='#usage') Usage
+  h1 A login example
+  p.
+    This short example demonstrates the ease of creating simple yet
+    efficient login forms. Note that the generated HTML is kept at its
+    minimal avoiding as much as possible to include CSS classes for
+    positionning elements or animating them.
+  .example
+    .example1
+      p Redish login form
+      form
+        span.input
+          input(type='email', id='username', name='username')
+          label(for='username'): span You ID
+        span.input
+          input(type='password', id='password', name='password')
+          label(for='password'): span Your password
+        button.small(type='button')
+          i.fa.fa-chevron-circle-right.fa-2x
+          span Access
+    .example2
+      p Greenish login form
+      form
+        span.input
+          input(type='email', id='username', name='username')
+          label(for='username'): span You ID
+        span.input
+          input(type='password', id='password', name='password')
+          label(for='password'): span Your password
+        button.small(type='button')
+          i.fa.fa-sign-in.fa-2x
+          span Access
+  p.
+    Both examples rely on the same principles: a set of Stylus file declaring
+    functions that you import only if you need them. Each function can be
+    customized with your color theme and some plugins are provided to apply
+    specific behaviors. Therefore, the generated CSS is strictly limited to
+    the style that you have created and imported. No unused CSS rules.
+  h1 Usage
   p Add it as a regular package.
   pre: code.bash.
     meteor add pierreeric:creativepure

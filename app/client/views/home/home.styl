@@ -31,3 +31,51 @@ article[data-role='home']
     &:last-child
       font-size 1em
       animation-delay 1.6s
+
+@import s(basePath, input)
+@import s(basePath, buttonSmall)
+
+redish = #741616
+greenish = #236a20
+
+article[data-role='usage']
+  .example
+    display flex
+    justify-content space-between
+    form
+      background white
+      border-radius roundCorner
+      max-width 400px
+      padding 1em
+    .example1
+      cpInput(white, darken(redish, 30%), redish)
+      cpInputJiro(darken(redish, 30%), redish)
+      cpButtonSmall(redish)
+      cpButtonSmallBoris(redish)
+      form
+        border 1px solid redish
+        >span:first-of-type
+          margin-top 1em
+          width 100%
+        >span:last-of-type
+          width calc(100% - 3.4em)
+          margin-bottom 1.5em
+        button.small
+          margin 1.4em 0 0 .5em
+    .example2
+      cpInput(white, darken(greenish, 30%), greenish)
+      cpInputYoko(white, greenish)
+      cpButtonSmall(greenish)
+      cpButtonSmallIvana(greenish)
+      form
+        border 1px solid greenish
+        >span:first-of-type
+          margin-top 0
+          width 100%
+        >span:last-of-type
+          width calc(100% - 3.4em)
+          margin 1em 0 0 0
+        button.small
+          margin .8em 0 0 .5em
+    p
+      margin 0
