@@ -13,5 +13,3 @@ Template.buttons.events
       $button
         .off ANIMATION_END_EVENT
         .removeClass 'clicked'
-      checkAndAuthenticate (t.$ '[name=\'username\']'), \
-        (t.$ '[name=\'password\']')
