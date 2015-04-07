@@ -12,20 +12,16 @@ cpButtonSmall(brandColor)
     overflow visible
     transition color .7s ease-out
     -webkit-tap-highlight-color rgba(0, 0, 0, 0)
-
     &.clicked, &:focus
       outline none
       color lighten(brandColor, 30%)
-
     >i
       pointer-events none
       display block
-
     >span
       position absolute
       opacity 0
       pointer-events none
-
     &::after
       absolute top 50% left 50%
       size buttonSmallSize
@@ -39,10 +35,8 @@ cpButtonSmallBoris(brandColor)
   button.small
     &::after
       background rgba(lighten(brandColor, 30%), .8)
-
     &.clicked::after
       animation button-small-boris .3s ease-out forwards
-
   @keyframes button-small-boris
     0%
       transform scale3d(.3, .3, 1)
@@ -62,7 +56,6 @@ cpButtonSmallIvana(brandColor)
       content ''
       opacity 0
       pointer-events none
-
     &::before, &::after
       box-shadow 0 0 0 4px brandColor
     &.clicked::before

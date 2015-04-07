@@ -2,5 +2,9 @@
 
 article[data-role='buttons']
   @import s(basePath, buttonSmall)
-  cpButtonSmall(brandColor)
-  cpButtonSmallBoris(brandColor)
+  .example.small
+    cpButtonSmall(brandColor)
+    &.boris
+      cpButtonSmallBoris(brandColor)
+    &.ivana
+      cpButtonSmallIvana(brandColor)

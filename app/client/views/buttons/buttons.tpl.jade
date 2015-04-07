@@ -1,7 +1,10 @@
 article(data-role='buttons')
   h1 Small buttons with clicked animations
-  p Example
-  .example
+  h2 Boris
+  p.
+    The first example shows how to use the Boris plugins for small buttons.
+    Click on the button to see the click / touch effect.
+  .example.small.boris
     button.small#access(type='button')
       i.fa.fa-chevron-circle-right.fa-2x
       span Access
@@ -9,6 +12,7 @@ article(data-role='buttons')
   pre: code.stylus.
     @import s(basePath, buttonSmall)
     cpButtonSmall(brandColor)
+    // The Boris plugin
     cpButtonSmallBoris(brandColor)
   p Usage in <b>Jade</b>
   pre: code.jade.
@@ -27,3 +31,14 @@ article(data-role='buttons')
             .off ANIMATION_END_EVENT
             .removeClass 'clicked'
           NowDoSomething()
+
+  h2 Ivana
+  p The second example show you how to use the Ivana plugin:
+  .example.small.ivana
+    button.small#access(type='button')
+      i.fa.fa-chevron-circle-right.fa-2x
+      span Access
+  p The only difference in usage is in the <b>Stylus</b>:
+  pre: code.stylus.
+    // The Ivana plugin
+    cpButtonSmallIvana(brandColor)
