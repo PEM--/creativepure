@@ -1,11 +1,16 @@
 article(data-role='buttons')
+  //- h1 Inspiration buttons
+  //- .example.inspiration
+  //-   button.inspiration(type='button')
+  //-     span Hover me or click me
+    
   h1 Small buttons with clicked animations
   h2 Boris
   p.
     The first example shows how to use the Boris plugins for small buttons.
     Click on the button to see the click / touch effect.
   .example.small.boris
-    button.small#access(type='button')
+    button.small(type='button')
       i.fa.fa-chevron-circle-right.fa-2x
       span Access
   p Usage in <b>Stylus</b>
@@ -23,8 +28,7 @@ article(data-role='buttons')
   pre: code.coffee.
     Template.myForm.events
       'click button': (e, t) ->
-        e.preventDefault()
-        $button = t.$ '#access'
+        $button = t.$ e.target
         $button.addClass 'clicked'
         $button.on ANIMATION_END_EVENT, ->
           $button
@@ -76,3 +80,4 @@ article(data-role='buttons')
   pre: code.stylus.
     // The Vertical plugin
     cpButtonCreativeVertical(brandColor)
+  

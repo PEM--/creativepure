@@ -1,14 +1,15 @@
 @import 'client/styles/*.import'
+@import s(basePath, buttonSmall)
+@import s(basePath, buttonCreative)
+@import s(basePath, buttonInspiration)
 
 article[data-role='buttons']
-  @import s(basePath, buttonSmall)
   .example.small
     cpButtonSmall(brandColor)
     &.boris
       cpButtonSmallBoris(brandColor)
     &.ivana
       cpButtonSmallIvana(brandColor)
-  @import s(basePath, buttonCreative)
   .example.creative
     cpButtonCreative(bgColor, brandColor)
     &.round
@@ -17,3 +18,7 @@ article[data-role='buttons']
       cpButtonCreativeRoundWhiten(brandColor)
     &.vertical
       cpButtonCreativeVertical(brandColor)
+  .example.inspiration
+    cpButtonInspiration(brandColor)
+    //cpButtonInspirationTamaya(brandColor)
+    cpButtonInspirationUjarak(bgColor, brandColor)

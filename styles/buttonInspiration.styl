@@ -1,38 +1,117 @@
-@import 'nib'
-@import 'client/styles/*.import'
-
-button.inspiration
-  float left
-  min-width 150px
-  max-width @min-width + 200
-  display block
-  margin 2em 0 0 0
-  padding 1em 2em
-  background rgba(brandColor, .1)
-  vertical-align middle
-  position relative
-  z-index 1
-  -webkit-backface-visibility hidden
-  color brandColor
-  border-radius roundCorner
-  border 1px solid brandColor
-  box-shadow 0 0 0 brandColor
-  transition box-shadow defaultTransitionValue, color defaultTransitionValue, border-color defaultTransitionValue, background-color defaultTransitionValue
-  user-select none
-  &:focus
-    outline none
-    box-shadow 0 1px 3px brandColor
-    transition box-shadow 1s
-  >span
+// https://github.com/codrops/ButtonStylesInspiration
+cpButtonInspiration(brandColor)
+  button.inspiration
+    //float left
+    min-width 150px
+    max-width @min-width + 200
+    //display block
+    margin 2em 0 0 0
+    padding 1em 2em
+    background rgba(brandColor, .1)
     vertical-align middle
-    transition color 1s
-  &:active
-    top 2px
-  &:hover
-    color darken(@color, 30%)
-    border-color @color
-    background rgba(brandColor, .3)
+    position relative
+    z-index 1
+    -webkit-backface-visibility hidden
+    color brandColor
+    border-radius roundCorner
+    border 1px solid brandColor
+    box-shadow 0 0 0 brandColor
+    transition box-shadow defaultTransitionValue, color defaultTransitionValue, border-color defaultTransitionValue, background-color defaultTransitionValue
+    user-select none
+    &:focus
+      outline none
+      box-shadow 0 1px 3px brandColor
+      transition box-shadow 1s
     >span
-      color @color
+      vertical-align middle
+      transition color 1s
+    &:active
+      top 2px
+    &:hover
+      color darken(@color, 30%)
+      border-color @color
+      background rgba(brandColor, .3)
+      >span
+        color @color
 
-@import 'client/styles/button-inspiration/ujarak.import'
+// Theme: Tamaya
+cpButtonInspirationTamaya(brandColor)
+  button.inspiration
+    overflow hidden
+    color brandColor
+    border-color brandColor
+    &::before, &::after
+      content attr(data-text)
+      position absolute
+      left 0
+      size 100% 50%
+      background lighten(brandColor, 40%)
+      overflow hidden
+      transition transform defaultTransitionValue
+    &::before
+      top 0
+      padding-top 1em
+    &::after
+      bottom 0
+      line-height 0
+    >span
+      display block
+      transform scale3d(.2, .2, 1)
+      opacity 0
+      transition transform defaultTransitionValue, opacity defaultTransitionValue
+    &.clicked
+      &::before
+        transform translate3d(0, -100%, 0)
+      &::after
+        transform translate3d(0, 100%, 0)
+      >span
+        opacity 1
+        transform scale3d(1, 1, 1)
+
+// Theme: Ujarak
+cpButtonInspirationUjarak(bgColor, brandColor)
+  button.inspiration
+    &::before
+      content ''
+      absolute top left
+      size 100%
+      background rgba(brandColor, .7)
+      z-index -1
+      opacity 0
+      transform scale3d(.7, 1, 1)
+      transition transform defaultTransitionValue, opacity defaultTransitionValue
+      border-radius roundCorner
+    &.clicked
+      color bgColor
+      border-color darken(brandColor, 30%)
+      &::before
+        opacity 1
+        transform translate3d(0, 0, 0)
+
+// Theme: Winoma
+cpButtonInspirationWinoma(bgColor, brandColor)
+  button.inspiration
+    overflow hidden
+    padding 0
+    transition border-color defaultTransitionValue, background-color defaultTransitionValue
+    &::after
+      content attr(data-text)
+      absolute top left
+      size 100%
+      opacity 0
+      color bgColor
+      transform translate3d(0, 25%, 0)
+    >span
+      display block
+    &::after, >span
+      padding 1em 2em
+      transition transform defaultTransitionValue, opacity defaultTransitionValue
+    &.clicked
+      border-color darken(brandColor, 30%)
+      background-color brandColor
+      &::after
+        opacity 1
+        transform translate3d(0, 0, 0)
+      >span
+        opacity 0
+        transform translate3d(0, -25%, 0)

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'pierreeric:creativepure',
-  version: '0.1.7',
+  version: '0.1.8',
   // Brief, one-line summary of the package.
   summary: 'A set of styles all written with Stylus and inspired from Codrops.',
   // URL to the Git repository containing the source code for this package.
@@ -22,7 +22,8 @@ Package.onUse(function(api) {
       'styles/input.styl',
       'styles/links.styl',
       'styles/buttonSmall.styl',
-      'styles/buttonCreative.styl'
+      'styles/buttonCreative.styl',
+      'styles/buttonInspiration.styl'
     ], 'client');
   // Coffeescript files
   api.addFiles('lib/animation.coffee', 'client');
