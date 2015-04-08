@@ -1,0 +1,16 @@
+@import 'client/styles/*.import'
+@import s(basePath, links)
+
+article[data-role='links']
+  ul
+    inline-list()
+    >li:nth-child(2)
+      cpLinks(brandInfo)
+    >li:nth-child(3)
+      cpLinks(brandSuccess)
+    >li:nth-child(4)
+      cpLinks(brandWarning)
+    >li:nth-child(5)
+      cpLinks(brandDanger)
+    >li:nth-child(6)
+      cpLinks(violet)

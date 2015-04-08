@@ -16,14 +16,17 @@ Package.onUse(function(api) {
   // Stylus files
   api.addFiles(
     [
-      'styles/main.styl',
       'styles/animate.styl',
-      'styles/ironprogress.styl',
-      'styles/input.styl',
-      'styles/links.styl',
-      'styles/buttonSmall.styl',
       'styles/buttonCreative.styl',
-      'styles/buttonInspiration.styl'
+      'styles/buttonInspiration.styl',
+      'styles/buttonSmall.styl',
+      'styles/checkbox.styl',
+      'styles/input.styl',
+      'styles/ironprogress.styl',
+      'styles/links.styl',
+      'styles/main.styl',
+      'styles/selectCustom.styl',
+      'styles/table.styl'
     ], 'client');
   // Coffeescript files
   api.addFiles('lib/animation.coffee', 'client');

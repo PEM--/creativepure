@@ -1,0 +1,31 @@
+article(data-role='iron-router')
+  h1 Iron router
+  p This small styles eases the customization of Iron router progress.
+  pre: code.bash.
+    meteor add iron:router multiply:iron-router-progress
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, ironprogress)
+
+article(data-role='links')
+  h1 Links
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2010/01/03/scrolling-to-the-top-and-bottom-with-jquery/', target='_blank') Codrops
+  p.
+    Links are animated when hovered. Using your main color scheme or any custom
+    colors.
+  figure
+    ul
+      li: a(href='/') Normal link
+      li: a(href='/') Info link
+      li: a(href='/') Success link
+      li: a(href='/') Warning link
+      li: a(href='/') Danger link
+      li: a(href='/') Custom link
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, links)
+    cpLinks(brandColor)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    a(href='/') Normal link
