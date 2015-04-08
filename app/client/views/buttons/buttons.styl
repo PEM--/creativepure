@@ -4,25 +4,25 @@
 @import s(basePath, buttonInspiration)
 
 article[data-role='buttons']
-  .example.small
+  figure[data-role='small']
     cpButtonSmall(brandColor)
-    &.boris
+    &[data-content='boris']
       cpButtonSmallBoris(brandColor)
-    &.ivana
+    &[data-content='ivana']
       cpButtonSmallIvana(brandColor)
-  .example.creative
+  figure[data-role='creative']
     cpButtonCreative(bgColor, brandColor)
-    &.round
+    &[data-content='round']
       cpButtonCreativeRound(bgColor)
-    &.roundwhiten
+    &[data-content='roundwhiten']
       cpButtonCreativeRoundWhiten(brandColor)
-    &.vertical
+    &[data-content='vertical']
       cpButtonCreativeVertical(brandColor)
-  .example.inspiration
+  figure[data-role='inspiration']
     cpButtonInspiration(brandColor)
-    &.tamaya
+    &[data-content='tamaya']
       cpButtonInspirationTamaya(brandColor)
-    &.ujarak
+    &[data-content='ujarak']
       cpButtonInspirationUjarak(bgColor, brandColor)
-    &.winoma
+    &[data-content='winoma']
       cpButtonInspirationWinoma(bgColor, brandColor)

@@ -39,20 +39,21 @@ redish = #9d0c0c
 greenish = #43903b
 
 article[data-role='usage']
-  .example
+  figure
     display flex
     justify-content space-between
+    figcaption
+      margin-bottom 1em
     form
       background white
       border-radius roundCorner
       max-width 400px
       padding 1em
-    .example1
-      cpInput(white, darken(redish, 30%), redish)
-      cpInputJiro(darken(redish, 30%), redish)
-      cpButtonSmall(redish)
-      cpButtonSmallBoris(redish)
-      form
+      &[data-role='redish']
+        cpInput(white, darken(redish, 30%), redish)
+        cpInputJiro(darken(redish, 30%), redish)
+        cpButtonSmall(redish)
+        cpButtonSmallBoris(redish)
         background lighten(redish, 70%)
         border 1px solid redish
         >span:first-of-type
@@ -63,12 +64,11 @@ article[data-role='usage']
           margin-bottom 1.5em
         button.small
           margin 1.4em 0 0 .5em
-    .example2
-      cpInput(white, darken(greenish, 30%), greenish)
-      cpInputYoko(white, greenish)
-      cpButtonSmall(greenish)
-      cpButtonSmallIvana(greenish)
-      form
+      &[data-role='greenish']
+        cpInput(white, darken(greenish, 30%), greenish)
+        cpInputYoko(white, greenish)
+        cpButtonSmall(greenish)
+        cpButtonSmallIvana(greenish)
         background lighten(greenish, 70%)
         border 1px solid greenish
         >span:first-of-type
@@ -79,5 +79,3 @@ article[data-role='usage']
           margin 1em 0 0 0
         button.small
           margin .8em 0 0 .5em
-    p
-      margin 0

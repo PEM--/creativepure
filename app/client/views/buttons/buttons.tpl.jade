@@ -1,10 +1,12 @@
 article(data-role='buttons', data-content='small-buttons')
   h1 Small buttons <small>with clicked animations</small>
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2010/01/03/scrolling-to-the-top-and-bottom-with-jquery/', target='_blank') Codrops
   h2 Boris
   p.
     The first example shows how to use the Boris plugins for small buttons.
     Click on the button to see the click / touch effect.
-  .example.small.boris
+  figure(data-role='small', data-content='boris')
     button.small(type='button')
       i.fa.fa-chevron-circle-right.fa-2x
       span Access
@@ -32,7 +34,7 @@ article(data-role='buttons', data-content='small-buttons')
           NowDoSomething()
   h2 Ivana
   p The second example shows you how to use the Ivana plugin:
-  .example.small.ivana
+  figure(data-role='small', data-content='ivana')
     button.small#access(type='button')
       i.fa.fa-chevron-circle-right.fa-2x
       span Access
@@ -43,11 +45,13 @@ article(data-role='buttons', data-content='small-buttons')
 
 article(data-role='buttons', data-content='creative-buttons')
   h1 Creative buttons
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2010/01/03/scrolling-to-the-top-and-bottom-with-jquery/', target='_blank') Codrops
   h2 Round
   p.
     These huge buttons are simple ones with icons on them. The first flavour is
     a rounded button that gets a bit darker when hovering upon.
-  .example.creative.round
+  figure(data-role='creative', data-content='round')
     button.creative(data-role='add') Add something
   p Usage in <b>Stylus</b>
   pre: code.stylus.
@@ -62,7 +66,7 @@ article(data-role='buttons', data-content='creative-buttons')
   p.
     Not far from the former one, the round whiten plugin adds a bit of contrast
     with a subtle hover effect leading the user to the message it carries.
-  .example.creative.roundwhiten
+  figure(data-role='creative', data-content='roundwhiten')
     button.creative(data-role='validate') Validate to go further
   p The only difference in usage is in the <b>Stylus</b>:
   pre: code.stylus.
@@ -70,13 +74,13 @@ article(data-role='buttons', data-content='creative-buttons')
     cpButtonCreativeRoundWhiten(brandColor)
   h3 Vertical
   p Buttons doesn't have to be horizontal.
-  .example.creative.vertical
+  figure(data-role='creative', data-content='vertical')
     button.creative(data-role='user') Modify your profile
   p As before, the only difference in usage is in the <b>Stylus</b>:
   pre: code.stylus.
     // The Vertical plugin
     cpButtonCreativeVertical(brandColor)
-  
+
 article(data-role='buttons', data-content='inspiration-buttons')
   h1 Inspiration buttons <small>with clicked animations</small>
   blockquote Inspired by 
@@ -84,7 +88,7 @@ article(data-role='buttons', data-content='inspiration-buttons')
   h2 Tamaya
   p.
     In this third button installment, we provide buttons with click animation.
-  .example.inspiration.tamaya
+  figure(data-role='inspiration', data-content='tamaya')
     button.inspiration(type='button', data-text='Hover me or click me')
       span Hover me or click me
   p Usage in <b>Stylus</b>
@@ -118,7 +122,7 @@ article(data-role='buttons', data-content='inspiration-buttons')
   p Note that this plugin doesn't use the
     code data-text
     | attribute but is fully compatible with the former plugin.
-  .example.inspiration.ujarak
+  figure(data-role='inspiration', data-content='ujarak')
     button.inspiration(type='button', data-text='Hover me or click me')
       span Hover me or click me
   p The only difference in usage is in the <b>Stylus</b>:
@@ -127,7 +131,7 @@ article(data-role='buttons', data-content='inspiration-buttons')
     cpButtonInspirationUjarak(bgColor, brandColor)
   h2 Winoma
   p The third example shows you how to use the Winoma plugin.
-  .example.inspiration.winoma
+  figure(data-role='inspiration', data-content='winoma')
     button.inspiration(type='button', data-text='Hover me or click me')
       span Hover me or click me
   p The only difference in usage is in the <b>Stylus</b>:

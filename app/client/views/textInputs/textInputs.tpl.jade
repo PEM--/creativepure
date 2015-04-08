@@ -1,12 +1,13 @@
 article(data-role='textInputs')
   h1 Text inputs
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2010/01/03/scrolling-to-the-top-and-bottom-with-jquery/', target='_blank') Codrops
   h2 Jiro
   p This first example shows you how to use the Jiro plugin for a text input:
-  .example.jiro
-    form
-      span.input
-        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-        label(for='username'): span Your email
+  figure(data-role='jiro')
+    span.input
+      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+      label(for='username'): span Your email
   p Usage in <b>Stylus</b>
   pre: code.stylus.
     @import s(basePath, input)
@@ -15,10 +16,9 @@ article(data-role='textInputs')
     cpInputJiro(textColor, brandColor)
   p Usage in <b>Jade</b>
   pre: code.jade.
-    form
-      span.input
-        input(type='email', id='username', name='username')
-        label(for='username'): span Your email
+    span.input
+      input(type='email', id='username', name='username')
+      label(for='username'): span Your email
   p Usage in <b>Coffee</b>
   pre: code.coffee.
     Template.myForm.rendered = ->
@@ -36,11 +36,10 @@ article(data-role='textInputs')
   
   h2 Haruki
   p This second example shows you how to use the Haruki plugin for a text input:
-  .example.haruki
-    form
-      span.input
-        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-        label(for='username'): span Your email
+  figure(data-role='haruki')
+    span.input
+      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+      label(for='username'): span Your email
   p The only difference in usage is in the <b>Stylus</b>:
   pre: code.stylus.
     // Here is the Haruki plugin
@@ -48,11 +47,10 @@ article(data-role='textInputs')
   
   h2 Hoshi
   p This third example shows you how to use the Hoshi plugin for a text input:
-  .example.hoshi
-    form
-      span.input
-        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-        label(for='username'): span Your email
+  figure(data-role='hoshi')
+    span.input
+      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+      label(for='username'): span Your email
   p As before, the only difference in usage is in the <b>Stylus</b>:
   pre: code.stylus.
     // Here is the Hoshi plugin
@@ -60,11 +58,10 @@ article(data-role='textInputs')
   
   h2 Yoko
   p This fourth example shows you how to use the Yoko plugin for a text input:
-  .example.yoko
-    form
-      span.input
-        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-        label(for='username'): span Your email
+  figure(data-role='yoko')
+    span.input
+      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+      label(for='username'): span Your email
   p As before, the only difference in usage is in the <b>Stylus</b>:
   pre: code.stylus.
     // Here is the Yoko plugin

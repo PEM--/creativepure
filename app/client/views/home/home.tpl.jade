@@ -14,31 +14,29 @@ article(data-role='usage')
     efficient login forms. Note that the generated HTML is kept at its
     minimal avoiding as much as possible to include CSS classes for
     positionning elements or animating them.
-  .example
-    .example1
-      p Redish login form
-      form
-        span.input
-          input(type='email', id='username', name='username')
-          label(for='username'): span You ID
-        span.input
-          input(type='password', id='password', name='password')
-          label(for='password'): span Your password
-        button.small(type='button')
-          i.fa.fa-chevron-circle-right.fa-2x
-          span Access
-    .example2
-      p Greenish login form
-      form
-        span.input
-          input(type='email', id='username', name='username')
-          label(for='username'): span You ID
-        span.input
-          input(type='password', id='password', name='password')
-          label(for='password'): span Your password
-        button.small(type='button')
-          i.fa.fa-sign-in.fa-2x
-          span Access
+  figure
+    form(data-role='redish')
+      figcaption Redish login form    
+      span.input
+        input(type='email', id='username', name='username')
+        label(for='username'): span You ID
+      span.input
+        input(type='password', id='password', name='password')
+        label(for='password'): span Your password
+      button.small(type='button')
+        i.fa.fa-chevron-circle-right.fa-2x
+        span Access
+    form(data-role='greenish')
+      figcaption Greenish login form
+      span.input
+        input(type='email', id='username', name='username')
+        label(for='username'): span You ID
+      span.input
+        input(type='password', id='password', name='password')
+        label(for='password'): span Your password
+      button.small(type='button')
+        i.fa.fa-sign-in.fa-2x
+        span Access
   p.
     Both examples rely on the same principles: a set of Stylus file declaring
     functions that you import only if you need them. Each function can be

@@ -1,15 +1,15 @@
 @import 'client/styles/*.import'
+@import s(basePath, input)
 
 article[data-role='textInputs']
-  @import s(basePath, input)
-  .example
+  figure
     cpInput(bgColor, textColor, brandColor)
-    &.jiro
+    &[data-role='jiro']
       cpInputJiro(textColor, brandColor)
-    &.haruki
+    &[data-role='haruki']
       padding-top 3em
       cpInputHaruki(textColor, brandColor)
-    &.hoshi
-      cpInputHoshi(textColor, brandColor)
-    &.yoko
-      cpInputYoko(textColor, brandColor)
+    &[data-role='hoshi']
+      cpInputHoshi(brandColor)
+    &[data-role='yoko']
+      cpInputYoko(bgColor, brandColor)
