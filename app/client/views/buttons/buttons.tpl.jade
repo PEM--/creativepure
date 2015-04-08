@@ -1,9 +1,4 @@
-article(data-role='buttons')
-  //- h1 Inspiration buttons <small>with clicked animations</small>
-  //- .example.inspiration
-  //-   button.inspiration(type='button')
-  //-     span Hover me or click me
-    
+article(data-role='buttons', data-content='small-buttons')
   h1 Small buttons <small>with clicked animations</small>
   h2 Boris
   p.
@@ -36,7 +31,7 @@ article(data-role='buttons')
             .removeClass 'clicked'
           NowDoSomething()
   h2 Ivana
-  p The second example show you how to use the Ivana plugin:
+  p The second example shows you how to use the Ivana plugin:
   .example.small.ivana
     button.small#access(type='button')
       i.fa.fa-chevron-circle-right.fa-2x
@@ -45,7 +40,8 @@ article(data-role='buttons')
   pre: code.stylus.
     // The Ivana plugin
     cpButtonSmallIvana(brandColor)
-  
+
+article(data-role='buttons', data-content='creative-buttons')
   h1 Creative buttons
   h2 Round
   p.
@@ -81,3 +77,60 @@ article(data-role='buttons')
     // The Vertical plugin
     cpButtonCreativeVertical(brandColor)
   
+article(data-role='buttons', data-content='inspiration-buttons')
+  h1 Inspiration buttons <small>with clicked animations</small>
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2010/01/03/scrolling-to-the-top-and-bottom-with-jquery/', target='_blank') Codrops
+  h2 Tamaya
+  p.
+    In this third button installment, we provide buttons with click animation.
+  .example.inspiration.tamaya
+    button.inspiration(type='button', data-text='Hover me or click me')
+      span Hover me or click me
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, buttonInspiration)
+    cpButtonInspiration(brandColor)
+    // The Tamaya plugin
+    cpButtonInspirationTamaya(brandColor)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    button.inspiration(type='button', data-text='Some text')
+      span Some text
+  p Note that to avoid repeating yourself with the 
+    code data-text
+    | attribute and the
+    code span
+    | content, you can use Blaze to define the text content.
+  p Usage in <b>Coffee</b>
+  pre: code.coffee.
+    Template.myForm.events
+      'click button': (e, t) ->
+        $button = t.$ e.target
+        $button.addClass 'clicked'
+        $button.on TRANSITION_END_EVENT, ->
+          $button
+            .off TRANSITION_END_EVENT
+            .removeClass 'clicked'
+          NowDoSomething()
+  h2 Ujarak
+  p The second example shows you how to use the Ujarak plugin.
+  p Note that this plugin doesn't use the
+    code data-text
+    | attribute but is fully compatible with the former plugin.
+  .example.inspiration.ujarak
+    button.inspiration(type='button', data-text='Hover me or click me')
+      span Hover me or click me
+  p The only difference in usage is in the <b>Stylus</b>:
+  pre: code.stylus.
+    // The Ujarak plugin
+    cpButtonInspirationUjarak(bgColor, brandColor)
+  h2 Winoma
+  p The third example shows you how to use the Winoma plugin.
+  .example.inspiration.winoma
+    button.inspiration(type='button', data-text='Hover me or click me')
+      span Hover me or click me
+  p The only difference in usage is in the <b>Stylus</b>:
+  pre: code.stylus.
+    // The Winoma plugin
+    cpButtonInspirationWinoma(bgColor, brandColor)

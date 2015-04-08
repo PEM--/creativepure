@@ -20,5 +20,9 @@ article[data-role='buttons']
       cpButtonCreativeVertical(brandColor)
   .example.inspiration
     cpButtonInspiration(brandColor)
-    //cpButtonInspirationTamaya(brandColor)
-    cpButtonInspirationUjarak(bgColor, brandColor)
+    &.tamaya
+      cpButtonInspirationTamaya(brandColor)
+    &.ujarak
+      cpButtonInspirationUjarak(bgColor, brandColor)
+    &.winoma
+      cpButtonInspirationWinoma(bgColor, brandColor)
