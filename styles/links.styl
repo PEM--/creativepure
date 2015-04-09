@@ -7,10 +7,8 @@ cpLinks(brandColor)
     position relative
     display inline-block
     padding 0
-
     &:focus
       outline none
-
     &::after
       absolute bottom left
       size 100% 1px
@@ -19,7 +17,6 @@ cpLinks(brandColor)
       opacity 0
       transition height defaultTransitionValue, opacity defaultTransitionValue, transform defaultTransitionValue
       transform translateY(10px)
-
     &:hover::after, &:focus::after
       height 2px
       border-radius @height

@@ -1,12 +1,9 @@
-@import 'nib'
-@import 'client/styles/*.import'
-
 checkboxHeight = 1.5em
 
 calc(prop, val)
   {prop} s("calc(%s)", val)
 
-form
+cpCheckbox(bgColor, brandSuccess, brandDanger, brandColor)
   >span.checkbox
     z-index 1
     display inline-block

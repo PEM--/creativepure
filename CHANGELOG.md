@@ -1,7 +1,10 @@
 ## 0.1.X - Initial commit
 Covered HTML elements:
-* Iron progress
-* Select
-* Link
+* Animations
 * Button
-* Input
+* Checkbox
+* Iron progress
+* Input text
+* Link
+* Select
+* Tables

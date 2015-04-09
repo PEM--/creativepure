@@ -1,9 +1,12 @@
 @import 'client/styles/*.import'
 @import s(basePath, links)
+@import s(basePath, checkbox)
 
 article[data-role='links']
   ul
     inline-list()
+    display flex
+    justify-content space-between
     >li:nth-child(2)
       cpLinks(brandInfo)
     >li:nth-child(3)
@@ -14,3 +17,7 @@ article[data-role='links']
       cpLinks(brandDanger)
     >li:nth-child(6)
       cpLinks(violet)
+
+article[data-role='checkbox']
+  figure
+    cpCheckbox(bgColor, brandSuccess, brandDanger, brandColor)
