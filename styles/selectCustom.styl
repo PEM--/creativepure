@@ -1,124 +1,125 @@
-// http://tympanus.net/codrops/2014/07/10/inspiration-for-custom-select-elements/
-@import 'nib'
-@import 'client/styles/*.import'
+calc(prop, val)
+  {prop} s("calc(%s)", val)
 
-.select-custom
-  z-index 201
-  max-width 400px
-  width 100%
-  margin-top 2em
-  position relative
-  outline none
-  -webkit-touch-callout none
-  >span
-    absolute top left
-    padding 1.5em .85em
-    size 100%
-    text-align left
-    pointer-events none
-    user-select none
-    -webkit-touch-callout none
-    font-weight bold
-    font-size 70.25%
-    color brandColor
-    transition transform .3s ease-out
-    &::before
-      color @color
-      font-family FontAwesome
-      content '\f067'
-      absolute top 1.85em right .85em
-      transition transform defaultTransitionValue
-      transform rotate3d(0, 0, 1, 270deg)
-    &::after
-      content ''
-      size 100%
-      border-bottom 1px solid @color
-      absolute bottom 1px left
-      opacity 1
-      transition transform defaultTransitionValue, opacity defaultTransitionValue
-  >p
-    absolute bottom left
-    size 100%
-    margin 0
-    padding 1em .5em
-    inline-block()
-    color textColor
-    font-weight bold
-    overflow hidden
-    opacity 0
-    transition opacity .3s .3s ease-out
-    &::after
-      content ''
-      size inherit
-      absolute bottom left
-      background rgba(brandColor, .1)
-      border-radius roundCorner
-      transform translate3d(0, -100%, 0)
-      transition transform .3s .3s ease-out
-  >div
+cpSelectCustom(bgColor, brandColor)
+  .select-custom
+    z-index 201
+    max-width 400px
+    width 100%
+    margin-top 2em
     position relative
-    margin-top 3em
-    user-select none
-    &::after
-      content ''
-      size 100%
-      absolute bottom 1px left
-      border-bottom 1px solid brandColor
-    >ul
-      reset-list()
-      absolute top -2px left 1em
-      visibility visible
-      width calc(100% - 2em)
-      overflow hidden
-      border 1px solid rgba(brandColor, 1)
-      background bgColor
-      border-radius 0 0 roundCorner roundCorner
-      animation select-custom-visibility-inverted .3s .3s ease-out forwards
-      >li
-        font-size 70.25%
-        font-weight bold
-        color brandColor
-        background rgba(brandColor, .1)
-        padding 1.5em 1.85em
-        position relative
-        cursor pointer
-        transition transform defaultTransitionValue, background-color defaultTransitionValue
-        transform translate3d(100%, 0, 0)
-        for num in 1 2 3 4 5 6 7 8
-          &:nth-child({num})
-            transition-delay (.1s*num), (.1s*num)
-        &:hover
-          background rgba(brandColor, .3)
-        &:not(:last-child)::after
-          absolute bottom left 1em
-          content ''
-          background rgba(@color, .3)
-          size calc(100% - 2em) 1px
-  &:focus
+    outline none
+    -webkit-touch-callout none
     >span
+      absolute top left
+      padding 1.5em .85em
+      size 100%
+      text-align left
+      pointer-events none
+      user-select none
+      -webkit-touch-callout none
+      font-weight bold
+      font-size 70.25%
+      color brandColor
+      transition transform .3s ease-out
       &::before
-        transform rotate3d(0, 0, 1, 45deg)
+        color @color
+        font-family FontAwesome
+        content '\f067'
+        absolute top 1.85em right .85em
+        transition transform defaultTransitionValue
+        transform rotate3d(0, 0, 1, 270deg)
+      &::after
+        content ''
+        size 100%
+        border-bottom 1px solid @color
+        absolute bottom 1px left
+        opacity 1
+        transition transform defaultTransitionValue, opacity defaultTransitionValue
+    >p
+      absolute bottom left
+      size 100%
+      margin 0
+      padding 1em .5em
+      inline-block()
+      color textColor
+      font-weight bold
+      overflow hidden
+      opacity 0
+      transition opacity .3s .3s ease-out
+      &::after
+        content ''
+        size inherit
+        absolute bottom left
+        background rgba(brandColor, .1)
+        border-radius roundCorner
+        transform translate3d(0, -100%, 0)
+        transition transform .3s .3s ease-out
     >div
       position relative
       margin-top 3em
+      user-select none
+      &::after
+        content ''
+        size 100%
+        absolute bottom 1px left
+        border-bottom 1px solid brandColor
       >ul
-        animation select-custom-visibility .3s ease-out forwards
+        reset-list()
+        absolute top -2px left 1em
+        visibility visible
+        calc('width', s("100% - %s", 2em))
+        overflow hidden
+        border 1px solid rgba(brandColor, 1)
+        background bgColor
+        border-radius 0 0 roundCorner roundCorner
+        animation select-custom-visibility-inverted .3s .3s ease-out forwards
         >li
-          transform translate3d(0, 0, 0)
+          font-size 70.25%
+          font-weight bold
+          color brandColor
+          background rgba(brandColor, .1)
+          padding 1.5em 1.85em
+          position relative
+          cursor pointer
+          transition transform defaultTransitionValue, background-color defaultTransitionValue
+          transform translate3d(100%, 0, 0)
+          for num in 1 2 3 4 5 6 7 8
+            &:nth-child({num})
+              transition-delay (.1s*num), (.1s*num)
+          &:hover
+            background rgba(brandColor, .3)
+          &:not(:last-child)::after
+            absolute bottom left 1em
+            content ''
+            background rgba(@color, .3)
+            calc('width', s("100% - %s", 2em))
+            height 1px
+    &:focus
+      >span
+        &::before
+          transform rotate3d(0, 0, 1, 45deg)
+      >div
+        position relative
+        margin-top 3em
+        >ul
+          animation select-custom-visibility .3s ease-out forwards
+          >li
+            transform none
 
-.select-custom.filled
-  >span
-    transform translate3d(0, -3.5em, 0)
-    &::after
-      transform translate3d(0, -.5em, 0)
-      opacity .2
-      bottom 2px
-    &:before
-      transform translate3d(0, 3.5em, 0)
-  >p
-    opacity 1
-    &::after
-      transform translate3d(0, 0, 0)
+  .select-custom.filled
+    >span
+      transform translate3d(0, -3.5em, 0)
+      &::after
+        transform translate3d(0, -.5em, 0)
+        opacity .2
+        bottom 2px
+      &:before
+        transform translate3d(0, 3.5em, 0)
+    >p
+      opacity 1
+      &::after
+        transform none
 
 @keyframes select-custom-visibility
   0%, 100%

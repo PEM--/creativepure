@@ -1,6 +1,7 @@
 @import 'client/styles/*.import'
 @import s(basePath, links)
 @import s(basePath, checkbox)
+@import s(basePath, selectCustom)
 
 article[data-role='links']
   ul
@@ -23,3 +24,8 @@ article[data-role='checkbox']
     cpCheckbox(bgColor, brandSuccess, brandDanger, brandColor)
     span.checkbox
       width 150px
+
+article[data-role='select']
+  figure
+    display flex
+    cpSelectCustom(bgColor, brandColor)
