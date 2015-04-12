@@ -1,3 +1,5 @@
+Template.buttons.rendered = -> (new WOW).init()
+
 Template.buttons.events
   'click button.small': (e, t) ->
     $button = t.$ e.target

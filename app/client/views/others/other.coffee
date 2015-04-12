@@ -1,3 +1,5 @@
+Template.others.rendered = -> (new WOW).init()
+
 Template.others.created = ->
   @rxCivility = new ReactiveVar
   @rxCivility.set ''

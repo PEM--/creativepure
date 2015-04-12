@@ -1,69 +1,72 @@
-article(data-role='textInputs')
+article.wow.fadeInDown(data-role='textInputs')
   h1 Text inputs
   blockquote Inspired by 
     cite: a(href='http://tympanus.net/codrops/2015/03/18/inspiration-text-input-effects-2/', target='_blank') Codrops
-  h2 Jiro
-  p This first example shows you how to use the Jiro plugin for a text input:
-  figure(data-role='jiro')
-    span.input
-      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-      label(for='username'): span Your email
-  p Usage in <b>Stylus</b>
-  pre: code.stylus.
-    @import s(basePath, input)
-    cpInput(bgColor, textColor, brandColor)
-    // Here is the Jiro plugin
-    cpInputJiro(textColor, brandColor)
-  p Usage in <b>Jade</b>
-  pre: code.jade.
-    span.input
-      input(type='email', id='username', name='username')
-      label(for='username'): span Your email
-  p Usage in <b>Coffee</b>
-  pre: code.coffee.
-    Template.myForm.rendered = ->
-      Meteor.setTimeout ->
-        @$ 'input[type=\'email\']'
-        .each (idx, el) =>
-          $el = @$ el
-          $el.addClass 'filled' unless $el.val().length is 0
-      , 300
-    Template.myForm.events
-      'focus input[type=\'email\']': (e, t) ->
-        (t.$ e.target).addClass 'filled'
-      'blur input[type=\'email\']': (e, t) ->
-        (t.$ e.target).removeClass 'filled' if e.target.value.length is 0  
-  
-  h2 Haruki
-  p This second example shows you how to use the Haruki plugin for a text input:
-  figure(data-role='haruki')
-    span.input
-      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-      label(for='username'): span Your email
-  p The only difference in usage is in the <b>Stylus</b>:
-  pre: code.stylus.
-    // Here is the Haruki plugin
-    cpInputHaruki(textColor, brandColor)
-  
-  h2 Hoshi
-  p This third example shows you how to use the Hoshi plugin for a text input:
-  figure(data-role='hoshi')
-    span.input
-      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-      label(for='username'): span Your email
-  p As before, the only difference in usage is in the <b>Stylus</b>:
-  pre: code.stylus.
-    // Here is the Hoshi plugin
-    cpInputHoshi(textColor, brandColor)
-  
-  h2 Yoko
-  p This fourth example shows you how to use the Yoko plugin for a text input:
-  figure(data-role='yoko')
-    span.input
-      input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
-      label(for='username'): span Your email
-  p As before, the only difference in usage is in the <b>Stylus</b>:
-  pre: code.stylus.
-    // Here is the Yoko plugin
-    cpInputYoko(textColor, brandColor)
-  
+  section.wow.fadeInDown
+    h2 Jiro
+    p This first example shows you how to use the Jiro plugin for a text input:
+    figure(data-role='jiro')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p Usage in <b>Stylus</b>
+    pre: code.stylus.
+      @import s(basePath, input)
+      cpInput(bgColor, textColor, brandColor)
+      // Here is the Jiro plugin
+      cpInputJiro(textColor, brandColor)
+    p Usage in <b>Jade</b>
+    pre: code.jade.
+      span.input
+        input(type='email', id='username', name='username')
+        label(for='username'): span Your email
+    p Usage in <b>Coffee</b>
+    pre: code.coffee.
+      Template.myForm.rendered = ->
+        Meteor.setTimeout ->
+          @$ 'input[type=\'email\']'
+          .each (idx, el) =>
+            $el = @$ el
+            $el.addClass 'filled' unless $el.val().length is 0
+        , 300
+      Template.myForm.events
+        'focus input[type=\'email\']': (e, t) ->
+          (t.$ e.target).addClass 'filled'
+        'blur input[type=\'email\']': (e, t) ->
+          (t.$ e.target).removeClass 'filled' if e.target.value.length is 0  
+  section.wow.fadeInDown
+    h2 Haruki
+    p This second example shows you how to use the Haruki plugin for a text input:
+    figure(data-role='haruki')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p The only difference in usage is in the <b>Stylus</b>:
+    pre: code.stylus.
+      // Here is the Haruki plugin
+      cpInputHaruki(textColor, brandColor)
+
+  section.wow.fadeInDown
+    h2 Hoshi
+    p This third example shows you how to use the Hoshi plugin for a text input:
+    figure(data-role='hoshi')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p As before, the only difference in usage is in the <b>Stylus</b>:
+    pre: code.stylus.
+      // Here is the Hoshi plugin
+      cpInputHoshi(textColor, brandColor)
+
+  section.wow.fadeInDown
+    h2 Yoko
+    p This fourth example shows you how to use the Yoko plugin for a text input:
+    figure(data-role='yoko')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p As before, the only difference in usage is in the <b>Stylus</b>:
+    pre: code.stylus.
+      // Here is the Yoko plugin
+      cpInputYoko(textColor, brandColor)
+    

@@ -1,4 +1,5 @@
 Template.textInputs.rendered = ->
+  (new WOW).init()
   Meteor.setTimeout ->
     @$ 'input[type=\'email\'], input[type=\'password\']'
     .each (idx, el) =>
