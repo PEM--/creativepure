@@ -9,7 +9,7 @@ Template.others.created = ->
 
 Template.others.helpers
   selectedCivility: -> Template.instance().rxCivility.get()
-  civility: -> ['Mr', 'Ms', 'Mrs', 'Dr']
+  civility: -> ['Mr', 'Mrs', 'Ms', 'Dr']
 
 Template.others.events
   'click .select-custom li': (e, t) ->
