@@ -1,4 +1,4 @@
-cpButtonMorphOverlay()
+cpButtonMorphOverlay(bgColor)
   .morph-button
     position relative
     & > button
@@ -11,23 +11,19 @@ cpButtonMorphOverlay()
 
   .morph-content
     pointer-events none
-    
+
   .morph-button-fixed, .morph-button-fixed .morph-content
-    width 300px
-    height 80px
+    size 300px 80px
 
   .morph-button-fixed
     & > button
       z-index 1000
-      width 100%
-      height 100%
-      -webkit-transition opacity 0.1s 0.5s
+      size 100%
       transition opacity 0.1s 0.5s
-      font-size 75%
+      // font-size 75%
     &.open
       & > button
         opacity 0
-        -webkit-transition opacity 0.1s
         transition opacity 0.1s
       .morph-content
         opacity 1
@@ -35,19 +31,16 @@ cpButtonMorphOverlay()
           visibility visible
           height auto
           opacity 1
-          -webkit-transition opacity 0.3s 0.5s
           transition opacity 0.3s 0.5s
     .morph-content
       position fixed
       z-index 900
       opacity 0
-      -webkit-transition opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s
       transition opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s
       & > div
         visibility hidden
         height 0
         opacity 0
-        -webkit-transition opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s
         transition opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s
     &.active
       & > button
@@ -56,28 +49,23 @@ cpButtonMorphOverlay()
         z-index 1900
 
   .morph-button-overlay .morph-content
-    -webkit-transition opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s
     transition opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s
 
   .morph-button-overlay.open .morph-content
-    -webkit-transition width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s
     transition width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s
 
   .morph-button-overlay
     .morph-content
       overflow hidden
-      background #e85657
+      background bgColor
     &.open
       .morph-content
         top 0 !important
-        left 0 !important
-        width 100%
-        height 100%
+        left @top
+        size 100%
     &.scroll
       .morph-content
         overflow-y scroll
-        
+
   .morph-button .morph-content, .morph-button.open .morph-content, .morph-button-modal-4 .morph-clone
-    -webkit-transition-timing-function cubic-bezier(0.7,0,0.3,1)
     transition-timing-function cubic-bezier(0.7,0,0.3,1)
-  

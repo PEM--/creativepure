@@ -13,4 +13,5 @@ Router.map ->
   @route '/home', path: '/'
   @route '/buttons'
   @route '/text-inputs'
+  @route '/off-screens'
   @route '/others'

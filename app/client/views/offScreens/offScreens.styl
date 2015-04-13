@@ -1,0 +1,12 @@
+@import 'client/styles/*.import'
+@import s(basePath, buttonMorphOverlay)
+
+article[data-role='morphButton']
+  figure
+    cpButtonMorphOverlay(lighten(red, 20%))
+    button
+      background brandColor
+      border 1px solid darken(brandColor, 30%)
+      border-radius roundCorner
+      color bgColor
+      font-size 1.2em

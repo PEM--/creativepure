@@ -1,0 +1,39 @@
+article.wow.fadeInDown(data-role='morphButton')
+  h1 Morping buttons
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2014/05/12/morphing-buttons-concept/', target='_blank') Codrops
+  p As brillantly stated in
+    a(href='http://www.google.com/design/spec/animation/responsive-interaction.html', target='_blank') Google's Material design for responsive interactions
+    | , these buttons are calling an animated off canvas to reveal their content.
+  figure
+    .morph-button.morph-button-overlay.morph-button-fixed
+      button Click me
+      .morph-content
+        p Hi there!
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, buttonMorphOverlay)
+    cpButtonMorphOverlay(brandDanger)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    .morph-button.morph-button-overlay.morph-button-fixed
+      button Click me
+      .morph-content
+        p Hi there!
+  p Usage in <b>Coffee</b>
+  pre: code.coffee.
+    Template.offScreens.created = ->
+      @toggle = =>
+        buttonPos = @$('button')[0].getBoundingClientRect()
+        el = @$ '.morph-button'
+        @$('.morph-content').css
+          left: "#{buttonPos.left}px"
+          top: "#{buttonPos.top}px"
+        if @expanded
+          el.removeClass 'open'
+        else
+          setTimeout (-> el.addClass 'open'), 25
+        @expanded = not @expanded
+
+    Template.offScreens.events
+      click: (e, t) -> t.toggle()
