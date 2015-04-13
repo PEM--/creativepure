@@ -12,4 +12,4 @@ Template.offScreens.created = ->
     @expanded = not @expanded
 
 Template.offScreens.events
-  click: (e, t) -> t.toggle()
+  'click .morph-button': (e, t) -> t.toggle()

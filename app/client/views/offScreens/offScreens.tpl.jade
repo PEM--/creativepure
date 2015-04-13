@@ -1,4 +1,4 @@
-article.wow.fadeInDown(data-role='morphButton')
+article.fadeInDown(data-role='morphButton')
   h1 Morphing buttons
   blockquote Inspired by 
     cite: a(href='http://tympanus.net/codrops/2014/05/12/morphing-buttons-concept/', target='_blank') Codrops
@@ -36,4 +36,4 @@ article.wow.fadeInDown(data-role='morphButton')
         @expanded = not @expanded
 
     Template.offScreens.events
-      click: (e, t) -> t.toggle()
+      'click .morph-button': (e, t) -> t.toggle()
