@@ -1,6 +1,6 @@
 Package.describe({
   name: 'pierreeric:creativepure',
-  version: '0.1.10',
+  version: '0.1.11',
   // Brief, one-line summary of the package.
   summary: 'A set of styles all written with Stylus and inspired from Codrops.',
   // URL to the Git repository containing the source code for this package.
@@ -22,6 +22,7 @@ Package.onUse(function(api) {
       'styles/buttonMorphOverlay.styl',
       'styles/buttonSmall.styl',
       'styles/checkbox.styl',
+      'styles/dotStyle.styl',
       'styles/input.styl',
       'styles/ironprogress.styl',
       'styles/links.styl',
