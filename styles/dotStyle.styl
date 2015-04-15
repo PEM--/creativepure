@@ -35,6 +35,9 @@ cpDotStyle(primary, secondary)
         &:focus
           outline none
 
+cpDotStyleScaleup(primary, secondary)
+  cpDotStyle(primary, secondary) //get core styles
+  
   .dotstyle-scaleup
     li
       a
