@@ -1,0 +1,41 @@
+<template name='homeCode'>
+  <pre><code class='stylus'>
+    // Base path for Creative & Pure
+    basePath = '.meteor/local/build/programs/web.browser/packages/pierreeric_creativepure/styles/%s'
+
+    // Global variables
+    roundCorner =     3px
+    buttonSmallSize = 70px
+
+    // Main colors
+    brandColor =    #dd7c27
+    textColor =     darken(brandColor, 70%)
+    bgColor =       lighten(brandColor, 90%)
+    brandPrimary =  brandColor
+    brandDanger =   hsl(0, saturation(brandColor),lightness(brandColor))
+    brandWarning =  hsl(45, saturation(brandColor),lightness(brandColor))
+    brandSuccess =  hsl(120, saturation(brandColor),lightness(brandColor))
+    brandInfo =     hsl(240, saturation(brandColor),lightness(brandColor))
+
+    // Breakpoints using Rupture
+    maxSize = 960px
+    rupture.scale = 0 600px 800px maxSize
+    rupture.scale-names = 'small' 'medium' 'desktop' 'hd'
+
+    // Fonts for Typographic
+    monoFont = optima
+    fontSize()
+      font-size 11px
+      +above('small')
+        font-size @font-size + 1
+      +above('medium')
+        font-size @font-size + 2
+      +above('desktop')
+        font-size @font-size + 3
+      +above('hd')
+        font-size @font-size + 4
+
+    // Default transition values
+    defaultTransitionValue = .3s ease-out
+  </code></pre>
+</template>
