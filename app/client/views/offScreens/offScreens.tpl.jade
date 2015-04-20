@@ -1,4 +1,4 @@
-article(data-role='morphButton')
+article.wow.fadeInDown(data-role='morphButton')
   h1 Morphing buttons
   blockquote Inspired by 
     cite: a(href='http://tympanus.net/codrops/2014/05/12/morphing-buttons-concept/', target='_blank') Codrops
@@ -8,8 +8,7 @@ article(data-role='morphButton')
   figure
     .morph-button.morph-button-overlay.morph-button-fixed
       button Click me
-      .morph-content
-        p Hi there!
+      .morph-content Hi there!
   p Usage in <b>Stylus</b>
   pre: code.stylus.
     @import s(basePath, buttonMorphOverlay)
@@ -34,6 +33,5 @@ article(data-role='morphButton')
         else
           setTimeout (-> el.addClass 'open'), 25
         @expanded = not @expanded
-
     Template.offScreens.events
       'click .morph-button': (e, t) -> t.toggle()

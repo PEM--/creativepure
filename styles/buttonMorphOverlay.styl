@@ -17,7 +17,7 @@ cpButtonMorphOverlay(bgColor)
 
   .morph-button-fixed
     & > button
-      z-index 1000
+      z-index 10
       size 100%
       transition opacity 0.1s 0.5s
       // font-size 75%
@@ -34,7 +34,7 @@ cpButtonMorphOverlay(bgColor)
           transition opacity 0.3s 0.5s
     .morph-content
       position fixed
-      z-index 900
+      z-index 9
       opacity 0
       transition opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s
       & > div
@@ -44,9 +44,9 @@ cpButtonMorphOverlay(bgColor)
         transition opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s
     &.active
       & > button
-        z-index 2000
+        z-index 102
       .morph-content
-        z-index 1900
+        z-index 101
 
   .morph-button-overlay .morph-content
     transition opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s
