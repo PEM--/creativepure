@@ -13,6 +13,11 @@ article.wow.fadeInDown(data-role='dot-style')
     ul
       each dotExample
         li(class='{{dotActive}}'): a(href='{{link}}')= page
+  figure.stroke
+    p Stroke
+    ul
+      each dotExample
+        li(class='{{dotActive}}'): a(href='{{link}}')= page
   p The solution relies on a reactive var acting as the content receiver.
   pre: code.bash.
     meteor add reactive-var
@@ -24,6 +29,9 @@ article.wow.fadeInDown(data-role='dot-style')
     cpDotStyleFillup(brandColor, bgColor)
     // For using the Scale up plugin
     cpDotStyleScaleup(brandColor, bgColor)
+    // For using the Stroke plugin
+    cpDotStyleStroke(brandColor, bgColor)
+
   p
     | Usage in <b>Jade</b> relies on exposed helpers. Note that the active dot
     | navigation style is set with an <code>active</code> class.

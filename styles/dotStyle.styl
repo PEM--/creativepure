@@ -51,10 +51,23 @@ cpDotStyleScaleup(brandColor, bgColor)
   ul
     >li
       a
-        transition transform defaultTransitionValue, background-color defaultTransitionValue
-        &:hover, &:focus
-          background-color lighten(brandColor, 30%)
-      &:active
+        transition transform 0.3s ease, background-color 0.3s ease
+      &.active
         a
           background-color brandColor
-          transform scale3d(1.5, 1.5, 1)
+          transform scale(1.5)
+    >li a:hover, >li a:focus
+      background-color bgColor
+
+cpDotStyleStroke(brandColor, bgColor)
+  ul
+    >li
+      a
+        box-shadow 0 0 0 2px rgba(255, 255, 255, 0)
+        transition box-shadow 0.3s ease, background-color 0.3s ease
+      &.active
+        a
+          background-color transparent
+          box-shadow 0 0 0 2px bgColor
+    >li a:hover, >li a:focus
+      background-color bgColor
