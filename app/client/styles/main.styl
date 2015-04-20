@@ -6,10 +6,7 @@
 typographic()
 
 @import s(basePath, main)
-@import s(basePath, animate)
 @import s(basePath, ironprogress)
-@import s(basePath, input)
-@import s(basePath, buttonSmall)
 @import s(basePath, links)
 
 body
@@ -36,9 +33,9 @@ figure
   border 1px solid textColor
   padding 1em
 
-cpLinks(brandColor)
-
 article:not([data-role='home'])
   center(maxSize)
   margin-top 3em
-  //animation fadeInDown .8s ease-in-out
+
+p, blockquote
+  cpLinks(brandColor)

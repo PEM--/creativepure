@@ -1,3 +1,57 @@
+article.wow.fadeInDown(data-role='dot-style')
+  h1 Dot navigation styles
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2014/01/21/dot-navigation-styles/', target='_blank') Codrops
+  p Subtle navigation effect, these widgets can be used for pagination support or thumbnail preview.
+  figure.fillup
+    p Fill up
+    ul
+      each dotExample
+        li(class='{{dotActive}}'): a(href='/') Home
+  figure.scaleup
+    p Scale up
+    ul
+      each dotExample
+        li(class='{{dotActive}}'): a(href='{{link}}')= page
+  p The solution relies on a reactive var acting as the content receiver.
+  pre: code.bash.
+    meteor add reactive-var
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, dotStyle)
+    cpDotStyle(bgColor)
+    // For using the Fill up plugin
+    cpDotStyleFillup(brandColor, bgColor)
+    // For using the Scale up plugin
+    cpDotStyleScaleup(brandColor, bgColor)
+  p
+    | Usage in <b>Jade</b> relies on exposed helpers. Note that the active dot
+    | navigation style is set with an <code>active</code> class.
+  pre: code.jade.
+    .select-custom(tabindex='0')
+      span Civility
+      p#civility= selectedCivility
+      div: ul
+        each civility
+          li(data-option, data-value=this)= this
+  p The <b>Coffee</b> file requires the setup of a reactive var:
+  pre: code.coffee.
+    Template.myPage.created = ->
+      @rxActiveDot = new ReactiveVar
+    Template.myPage.helpers
+      dotExample: -> [
+        {id: 1, link: '/', page: 'Home' }
+        {id: 2, link: '/', page: 'Buttons' }
+        {id: 3, link: '/', page: 'Text inputs' }
+        {id: 4, link: '/', page: 'Off screens' }
+        {id: 5, link: '/', page: 'Others' }
+      ]
+      dotActive: -> 'active' if Template.instance().rxActiveDot.get() is @id
+    Template.myPage.events
+      'click [data-role=\'dot-style\'] a': (e, t) ->
+        e.preventDefault()
+        t.rxActiveDot.set @id
+
 article.wow.fadeInDown(data-role='iron-router')
   h1 Iron router
   p This small styles eases the customization of Iron router progress.
@@ -94,3 +148,57 @@ article.wow.fadeInDown(data-role='select')
     Template.others.events
       'click .select-custom li': (e, t) ->
         t.rxCivility.set e.target.textContent
+
+article.wow.fadeInDown(data-role='dot-style')
+  h1 Dot navigation styles
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2014/01/21/dot-navigation-styles/', target='_blank') Codrops
+  p Subtle navigation effect, these widgets can be used for pagination support or thumbnail preview.
+  figure.fillup
+    p Fill up
+    ul
+      each dotExample
+        li(class='{{dotActive}}'): a(href='/') Home
+  figure.scaleup
+    p Scale up
+    ul
+      each dotExample
+        li(class='{{dotActive}}'): a(href='{{link}}')= page
+  p The solution relies on a reactive var acting as the content receiver.
+  pre: code.bash.
+    meteor add reactive-var
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, dotStyle)
+    cpDotStyle(bgColor)
+    // For using the Fill up plugin
+    cpDotStyleFillup(brandColor, bgColor)
+    // For using the Scale up plugin
+    cpDotStyleScaleup(brandColor, bgColor)
+  p
+    | Usage in <b>Jade</b> relies on exposed helpers. Note that the active dot
+    | navigation style is set with an <code>active</code> class.
+  pre: code.jade.
+    .select-custom(tabindex='0')
+      span Civility
+      p#civility= selectedCivility
+      div: ul
+        each civility
+          li(data-option, data-value=this)= this
+  p The <b>Coffee</b> file requires the setup of a reactive var:
+  pre: code.coffee.
+    Template.myPage.created = ->
+      @rxActiveDot = new ReactiveVar
+    Template.myPage.helpers
+      dotExample: -> [
+        {id: 1, link: '/', page: 'Home' }
+        {id: 2, link: '/', page: 'Buttons' }
+        {id: 3, link: '/', page: 'Text inputs' }
+        {id: 4, link: '/', page: 'Off screens' }
+        {id: 5, link: '/', page: 'Others' }
+      ]
+      dotActive: -> 'active' if Template.instance().rxActiveDot.get() is @id
+    Template.myPage.events
+      'click [data-role=\'dot-style\'] a': (e, t) ->
+        e.preventDefault()
+        t.rxActiveDot.set @id

@@ -1,5 +1,5 @@
-@import 'jeet'
 @import 'client/styles/*.import'
+@import s(basePath, links)
 
 nav
   background rgba(blackBg, .9)
@@ -14,7 +14,8 @@ nav
     display flex
     justify-content space-between
     li
-      a
+      cpLinks(brandColor)
+      a  
         font-weight 100
         font-family secondFont
         color white

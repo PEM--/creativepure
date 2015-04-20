@@ -2,12 +2,15 @@
 @import s(basePath, links)
 @import s(basePath, checkbox)
 @import s(basePath, selectCustom)
+@import s(basePath, dotStyle)
 
 article[data-role='links']
   ul
     inline-list()
     display flex
     justify-content space-between
+    >li:nth-child(1)
+      cpLinks(brandColor)
     >li:nth-child(2)
       cpLinks(brandInfo)
     >li:nth-child(3)
@@ -29,3 +32,17 @@ article[data-role='select']
   figure
     display flex
     cpSelectCustom(bgColor, brandColor)
+
+article[data-role='dot-style']
+  figure
+    background brandDanger
+    cpDotStyle(bgColor)
+    text-align center
+    ul
+    p
+      margin-top 0
+      color bgColor
+    &.fillup
+      cpDotStyleFillup(brandColor, bgColor)
+    &.scaleup
+      cpDotStyleScaleup(brandColor, bgColor)
