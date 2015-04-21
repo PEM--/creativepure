@@ -1,9 +1,3 @@
-article.wow.fadeInDown(data-role='long-shadow')
-  h1 Long shadow
-  blockquote Inspired by 
-    cite: a(href='http://codepen.io/awesomephant/pen/mAxHz', target='_blank') Codepen.io
-
-
 article.wow.fadeInDown(data-role='links')
   h1 Links
   blockquote Inspired by 
@@ -26,3 +20,22 @@ article.wow.fadeInDown(data-role='links')
   p Usage in <b>Jade</b>
   pre: code.jade.
     a(href='/') Normal link
+
+article.wow.fadeInDown(data-role='long-shadow')
+  h1 Long shadow
+  blockquote Inspired by 
+    cite: a(href='http://codepen.io/awesomephant/pen/mAxHz', target='_blank') Codepen.io
+  figure
+    .long-shadow.brand
+      p.fa.fa-twitter
+    .long-shadow.grayish
+      p.fa.fa-youtube
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, longShadow)
+    // 'box' or 'text', color, length, fadeout, skew, 'left' or 'right'
+    cpLongShadow('text', brandColor, 50, true, true, 'right')      
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    .long-shadow
+      p.fa.fa-twitter

@@ -1,3 +1,33 @@
-cpLongShadow(brandColor)
-  .long-shadow
-    box-shadow 0 0 5px brandColor
+// Stylus version of SCSS mixin from http://codepen.io/awesomephant/pen/mAxHz
+cpLongShadow(type = 'text', base-color = rgba(#000, .2), length = 100, fadeout = true, skew = false, direction = 'right')
+  shadow = ''
+  if !skew || type == 'text'
+    if direction == 'right'
+      for i in (0..length - 1)
+        shadow = shadow + i + 'px ' + i + 'px 0 ' + base-color + ','
+    else if direction == 'left'
+      for i in (0..length - 1)
+        shadow = shadow + i * -1 + 'px ' + i + 'px 0 ' + base-color + ','
+  if fadeout
+    for i in (0..length - 1)
+      if type == 'text' || !skew
+        if direction == 'right'
+          shadow = shadow + i + 'px ' + i + 'px 0 ' + rgba(base-color, 1 - i / length) + ','
+        else if direction == 'left'
+          shadow = shadow + i * -1 + 'px ' + i + 'px 0 ' + rgba(base-color, 1 - i / length) + ','
+      else if type == 'box' && skew
+        if direction == 'right'
+          shadow = shadow + i + 'px ' + i + 'px 0 ' + i * .2 + 'px ' + rgba(base-color, 1 - i / length) + ','
+        else if direction == 'left'
+          shadow = shadow + i * -1 + 'px ' + i + 'px 0 ' + i * .2 + 'px ' + rgba(base-color, 1 - i / length) + ','
+  shadow = shadow + length + 'px ' + length + 'px 0 ' + rgba(base-color, 0)
+  if fadeout == false
+    if skew == true && type == 'box'
+      for i in (0..length - 1)
+        shadow = shadow + i + 'px ' + i + 'px 0 ' + i * .1 + 'px ' + base-color + ','
+    shadow = shadow + length + 'px ' + length + 'px 0 ' + rgba(0, 0, 0, 0)
+  shadow = unquote(shadow)
+  if type == 'box'
+    box-shadow: shadow
+  if type == 'text'
+    text-shadow: shadow

@@ -1,9 +1,6 @@
 @import 'client/styles/*.import'
 @import s(basePath, links)
 
-article[data-role='long-shadow']
-  background red
-
 article[data-role='links']
   ul
     inline-list()
@@ -21,3 +18,35 @@ article[data-role='links']
       cpLinks(brandDanger)
     >li:nth-child(6)
       cpLinks(violet)
+
+article[data-role='long-shadow']
+  @import s(basePath, longShadow)
+  figure
+    overflow hidden
+    .fa-twitter
+      color blue
+    .fa-youtube
+      color red
+    .long-shadow
+      size 4em
+      overflow hidden
+      border-radius roundCorner
+      text-align center
+      display inline-block
+      margin 0 2em
+      >p, >p::before
+        margin .5em 0 0 0
+        padding 0
+        font-size 1.5em
+    .brand
+      border roundCorner solid brandColor
+      background lighten(brandColor, 40%)
+      cpLongShadow('box', lighten(brandColor, 30%), 30, true, true)
+      >p, >p::before
+        cpLongShadow('text', lighten(brandColor, 20%), 50)
+    .grayish
+      border roundCorner solid dimgray
+      background lighten(dimgray, 40%)
+      cpLongShadow('box', lighten(dimgray, 30%), 50, true, true)
+      >p, >p::before
+        cpLongShadow('text', lighten(dimgray, 20%), 30)
