@@ -1,0 +1,28 @@
+article.wow.fadeInDown(data-role='long-shadow')
+  h1 Long shadow
+  blockquote Inspired by 
+    cite: a(href='http://codepen.io/awesomephant/pen/mAxHz', target='_blank') Codepen.io
+
+
+article.wow.fadeInDown(data-role='links')
+  h1 Links
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2014/06/04/inspiration-for-inline-anchor-styles/', target='_blank') Codrops
+  p.
+    Links are animated when hovered. Using your main color scheme or any custom
+    colors.
+  figure
+    ul
+      li: a(href='/') Normal link
+      li: a(href='/') Info link
+      li: a(href='/') Success link
+      li: a(href='/') Warning link
+      li: a(href='/') Danger link
+      li: a(href='/') Custom link
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, links)
+    cpLinks(brandColor)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    a(href='/') Normal link

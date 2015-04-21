@@ -26,6 +26,7 @@ Package.onUse(function(api) {
       'styles/input.styl',
       'styles/ironprogress.styl',
       'styles/links.styl',
+      'styles/longShadow.styl',
       'styles/main.styl',
       'styles/selectCustom.styl',
       'styles/table.styl'

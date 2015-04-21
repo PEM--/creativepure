@@ -1,0 +1,23 @@
+@import 'client/styles/*.import'
+@import s(basePath, links)
+
+article[data-role='long-shadow']
+  background red
+
+article[data-role='links']
+  ul
+    inline-list()
+    display flex
+    justify-content space-between
+    >li:nth-child(1)
+      cpLinks(brandColor)
+    >li:nth-child(2)
+      cpLinks(brandInfo)
+    >li:nth-child(3)
+      cpLinks(brandSuccess)
+    >li:nth-child(4)
+      cpLinks(brandWarning)
+    >li:nth-child(5)
+      cpLinks(brandDanger)
+    >li:nth-child(6)
+      cpLinks(violet)
