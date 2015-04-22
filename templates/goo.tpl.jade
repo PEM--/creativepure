@@ -1,0 +1,6 @@
+svg
+  defs
+    filter#goo
+      feGaussianblur/(in='blurred', result='blur', stdDeviation='10')
+      feColormatrix/(in='blur', mode='matrix', values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7', result='goo')
+      feComposite/(in2='goo', in='blurred', result='mix')
