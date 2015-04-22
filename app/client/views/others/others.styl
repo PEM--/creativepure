@@ -21,6 +21,8 @@ article[data-role='goo']
       display inline-block
       transition background-color defaultTransitionValue
       relative top left
+      animation anim-plus 2s linear infinite alternate
+      z-index 1
       >span
         text-align center
         margin-top 1em
@@ -32,20 +34,15 @@ article[data-role='goo']
         >span
           color lighten(bgColor, 20%)
       &.twitter
-        z-index 1
-        animation anim-twitter 3s linear infinite alternate
+        animation-name anim-twitter
       &.facebook
-        z-index 1
-        animation anim-facebook 3s linear infinite alternate
+        animation-name anim-facebook
       &.weibo
-        z-index 1
-        animation anim-weibo 3s linear infinite alternate
+        animation-name anim-weibo
       &.pinterest
-        z-index 1
-        animation anim-pinterest 3s linear infinite alternate
+        animation-name anim-pinterest
       &.plus
         z-index 3
-        animation anim-plus 3s linear infinite alternate
 @keyframes anim-twitter
   0%
     transform none

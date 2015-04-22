@@ -1,6 +1,6 @@
 Package.describe({
   name: 'pierreeric:creativepure',
-  version: '0.1.12',
+  version: '0.1.13',
   // Brief, one-line summary of the package.
   summary: 'A set of styles all written with Stylus and inspired from Codrops.',
   // URL to the Git repository containing the source code for this package.
@@ -13,7 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   // Required packages
-  api.use(['coffeescript', 'templating', 'mquandalle:jade']);
+  api.use(['coffee:script@1.0.3', 'templating', 'mquandalle:jade@0.4.1']);
   // Stylus files
   api.addFiles(
     [
