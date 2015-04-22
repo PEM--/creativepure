@@ -24,6 +24,7 @@ Package.onUse(function(api) {
       'styles/buttonSmall.styl',
       'styles/checkbox.styl',
       'styles/dotStyle.styl',
+      'styles/goo.styl',
       'styles/input.styl',
       'styles/ironprogress.styl',
       'styles/links.styl',

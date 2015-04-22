@@ -1,5 +1,9 @@
+## 0.1.13 - Gooey
+Others:
+* Gooey effect
+
 ## 0.1.12 - Typography
-Typography
+Typography:
 * Links
 * Long shadow
 

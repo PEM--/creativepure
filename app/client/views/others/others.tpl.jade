@@ -7,6 +7,37 @@ article.wow.fadeInDown(data-role='iron-router')
   pre: code.stylus.
     @import s(basePath, ironprogress)
 
+article.wow.fadeInDown(data-role='goo')
+  h1 Gooey effect
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/', target='_blank') Codrops
+  p The Gooey effect blends shapes when they are closed to each other.
+  p
+    i.fa.fa-warning
+    | This effect only works on Chrome desktop and Chrome Android.
+  figure(data-role='gooey')
+    +goo
+    .menu
+      .item.twitter: span.fa.fa-twitter
+      .item.facebook: span.fa.fa-facebook
+      .item.plus: span.fa.fa-plus
+      .item.weibo: span.fa.fa-weibo
+      .item.pinterest: span.fa.fa-pinterest
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, goo)
+    // Apply the Gooey filter on a container
+    .container
+      cpGoo()
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    .container
+      // Include the SVG used for the Gooey filtering
+      +goo
+        // The filter is applied on the content
+        .item1
+        .item2
+
 article.wow.fadeInDown(data-role='checkbox')
   h1 Checkbox
   p.

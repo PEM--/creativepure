@@ -2,6 +2,93 @@
 @import s(basePath, checkbox)
 @import s(basePath, selectCustom)
 @import s(basePath, dotStyle)
+@import s(basePath, goo)
+
+article[data-role='goo']
+  figure
+    text-align center
+    .menu
+      cpGoo()
+      display inline-block
+      size 25em 4em
+      padding .5em
+      //background green
+    .item
+      margin 0 .7em
+      size 3em
+      border-radius 50%
+      background brandColor
+      display inline-block
+      transition background-color defaultTransitionValue
+      relative top left
+      >span
+        text-align center
+        margin-top 1em
+        size @width 1em
+        color bgColor
+        transition color defaultTransitionValue
+      &:hover
+        background darken(brandColor, 20%)
+        >span
+          color lighten(bgColor, 20%)
+      &.twitter
+        z-index 1
+        animation anim-twitter 3s linear infinite alternate
+      &.facebook
+        z-index 1
+        animation anim-facebook 3s linear infinite alternate
+      &.weibo
+        z-index 1
+        animation anim-weibo 3s linear infinite alternate
+      &.pinterest
+        z-index 1
+        animation anim-pinterest 3s linear infinite alternate
+      &.plus
+        z-index 3
+        animation anim-plus 3s linear infinite alternate
+@keyframes anim-twitter
+  0%
+    transform none
+  10%
+    transform none
+  50%
+    transform translate3d(4.2em, 0, 0)
+  to
+    transform translate3d(8.5em, 0, 0)
+@keyframes anim-facebook
+  0%
+    transform none
+  10%
+    transform none
+  50%
+    transform translate3d(4.2em, 0, 0)
+  to
+    transform translate3d(4.2em, 0, 0)
+@keyframes anim-weibo
+  0%
+    transform none
+  10%
+    transform none
+  50%
+    transform translate3d(-4.2em, 0, 0)
+  to
+    transform translate3d(-4.2em, 0, 0)
+@keyframes anim-pinterest
+  0%
+    transform none
+  10%
+    transform none
+  50%
+    transform translate3d(-4.2em, 0, 0)
+  to
+    transform translate3d(-8.5em, 0, 0)
+@keyframes anim-plus
+  0%
+    transform rotateZ(45deg)
+  90%
+    transform rotateZ(45deg)
+  to
+    transform none
 
 article[data-role='checkbox']
   figure

@@ -3,24 +3,7 @@
 @import s(basePath, buttonCreative)
 @import s(basePath, buttonInspiration)
 
-figure[data-role='truc']
-  background none
-  svg
-    size 0
-  .content
-    background none
-    -webkit-filter url('#goo')
-    //filter url('buttons#goo')
-    padding 50px
-  .circle1, .circle2
-    margin 20px
-    size 100px
-    border-radius 50%
-    background red
-    display inline-block
-    margin -5px
-
-
+article[data-role='buttons']
   figure[data-role='small']
     cpButtonSmall(brandColor)
     &[data-content='boris']
