@@ -12,7 +12,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
-  api.use('coffeescript');
+  // Required packages
+  api.use(['coffeescript', 'templating', 'mquandalle:jade']);
   // Stylus files
   api.addFiles(
     [
@@ -31,6 +32,8 @@ Package.onUse(function(api) {
       'styles/selectCustom.styl',
       'styles/table.styl'
     ], 'client');
+  // Jade files
+  api.addFiles(['templates/goo.tpl.jade'], 'client'),
   // Coffeescript files
   api.addFiles('lib/animation.coffee', 'client');
 });
