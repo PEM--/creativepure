@@ -2,6 +2,10 @@ Router.configure
   layoutTemplate: 'layout'
   loadingTemplate: 'loading'
   notFoundTemplate: 'notFound'
+  onBeforeAction: ->
+    ($ window).scrollTop 0
+    @next()
+    (new WOW).init()
   onAfterAction: ->
     Meteor.setTimeout ->
       $('pre code').each (i, node) ->
@@ -11,8 +15,7 @@ Router.configure
 # Route declaration
 Router.map ->
   @route '/home', path: '/'
-  @route '/buttons'
-  @route '/text-inputs'
   @route '/typography'
+  @route '/forms'
   @route '/off-screens'
-  @route '/others'
+  @route '/recipes'

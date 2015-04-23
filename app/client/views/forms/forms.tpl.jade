@@ -1,3 +1,75 @@
+article.wow.fadeInDown(data-role='textInputs')
+  h1 Text inputs
+  blockquote Inspired by 
+    cite: a(href='http://tympanus.net/codrops/2015/03/18/inspiration-text-input-effects-2/', target='_blank') Codrops
+  section.wow.fadeInDown
+    h2 Jiro
+    p This first example shows you how to use the Jiro plugin for a text input:
+    figure(data-role='jiro')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p Usage in <b>Stylus</b>
+    pre: code.stylus.
+      @import s(basePath, input)
+      cpInput(bgColor, textColor, brandColor)
+      // Here is the Jiro plugin
+      cpInputJiro(textColor, brandColor)
+    p Usage in <b>Jade</b>
+    pre: code.jade.
+      span.input
+        input(type='email', id='username', name='username')
+        label(for='username'): span Your email
+    p Usage in <b>Coffee</b>
+    pre: code.coffee.
+      Template.myForm.rendered = ->
+        Meteor.setTimeout ->
+          @$ 'input[type=\'email\']'
+          .each (idx, el) =>
+            $el = @$ el
+            $el.addClass 'filled' unless $el.val().length is 0
+        , 300
+      Template.myForm.events
+        'focus input[type=\'email\']': (e, t) ->
+          (t.$ e.target).addClass 'filled'
+        'blur input[type=\'email\']': (e, t) ->
+          (t.$ e.target).removeClass 'filled' if e.target.value.length is 0  
+  section.wow.fadeInDown
+    h2 Haruki
+    p This second example shows you how to use the Haruki plugin for a text input:
+    figure(data-role='haruki')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p The only difference in usage is in the <b>Stylus</b>:
+    pre: code.stylus.
+      // Here is the Haruki plugin
+      cpInputHaruki(textColor, brandColor)
+
+  section.wow.fadeInDown
+    h2 Hoshi
+    p This third example shows you how to use the Hoshi plugin for a text input:
+    figure(data-role='hoshi')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p As before, the only difference in usage is in the <b>Stylus</b>:
+    pre: code.stylus.
+      // Here is the Hoshi plugin
+      cpInputHoshi(textColor, brandColor)
+
+  section.wow.fadeInDown
+    h2 Yoko
+    p This fourth example shows you how to use the Yoko plugin for a text input:
+    figure(data-role='yoko')
+      span.input
+        input(type='email', id='username', name='username', autocapitalize='off', minlength='5', maxlength='200')
+        label(for='username'): span Your email
+    p As before, the only difference in usage is in the <b>Stylus</b>:
+    pre: code.stylus.
+      // Here is the Yoko plugin
+      cpInputYoko(textColor, brandColor)
+
 article.wow.fadeInDown(data-role='buttons', data-content='small-buttons')
   h1 Small buttons <small>with clicked animations</small>
   blockquote Inspired by 
@@ -138,3 +210,68 @@ article.wow.fadeInDown(data-role='buttons', data-content='inspiration-buttons')
   pre: code.stylus.
     // The Winoma plugin
     cpButtonInspirationWinoma(bgColor, brandColor)
+
+article.wow.fadeInDown(data-role='checkbox')
+  h1 Checkbox
+  p.
+    For your forms, you can use checkbox as animated switches using
+    your main color scheme.
+  figure
+    span.checkbox
+      label(for='switch') Put it on?
+      input(type='checkbox', id='switch', name='switch')
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, checkbox)
+    cpCheckbox(bgColor, brandSuccess, brandDanger, brandColor)
+  p Usage in <b>Jade</b>
+  pre: code.jade.
+    span.checkbox
+      label(for='switch') Put it on?
+      input(type='checkbox', id='switch', name='switch')
+
+article.wow.fadeInDown(data-role='select')
+  h1 Select
+  p.
+    Still for your forms, select are animated and customizable with your main
+    color scheme.
+  figure
+    .select-custom(tabindex='0')
+      span Civility
+      p#civility= selectedCivility
+      div: ul
+        each civility
+          li(data-option, data-value=this)= this
+  p.
+    We first start by setting a reactive variable as a the content receiver for
+    the selected value.
+  pre: code.bash.
+    meteor add reactive-var
+  p <b>Stylus</b> is like every other except that the container is a flexbox.
+  pre: code.stylus.
+    @import s(basePath, selectCustom)
+    cpCheckbox(bgColor, brandSuccess, brandDanger, brandColor)
+  p The <b>Jade</b> file isn't a select, it's a custom set of tags:
+  pre: code.jade.
+    .select-custom(tabindex='0')
+      span Civility
+      p#civility= selectedCivility
+      div: ul
+        each civility
+          li(data-option, data-value=this)= this
+  p The <b>Coffee</b> file requires the setup of a reactive var:
+  pre: code.coffee.
+    Template.others.created = ->
+      @rxCivility = new ReactiveVar
+      @rxCivility.set ''
+      @autorun (computation) =>
+        civility = @rxCivility.get()
+        unless computation.firstRun
+          $selectCustom = @$ '.select-custom'
+          $selectCustom.addClass 'filled'
+    Template.others.helpers
+      selectedCivility: -> Template.instance().rxCivility.get()
+      civility: -> ['Mr', 'Mrs', 'Ms', 'Dr']
+    Template.others.events
+      'click .select-custom li': (e, t) ->
+        t.rxCivility.set e.target.textContent

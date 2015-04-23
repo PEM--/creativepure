@@ -1,6 +1,4 @@
 @import 'client/styles/*.import'
-@import s(basePath, checkbox)
-@import s(basePath, selectCustom)
 @import s(basePath, dotStyle)
 @import s(basePath, goo)
 
@@ -86,17 +84,6 @@ article[data-role='goo']
     transform rotateZ(45deg)
   to
     transform none
-
-article[data-role='checkbox']
-  figure
-    cpCheckbox(bgColor, brandSuccess, brandDanger, brandColor)
-    span.checkbox
-      width 150px
-
-article[data-role='select']
-  figure
-    display flex
-    cpSelectCustom(bgColor, brandColor)
 
 article[data-role='dot-style']
   figure

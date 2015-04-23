@@ -1,4 +1,4 @@
-Template.others.created = ->
+Template.recipes.created = ->
   @rxCivility = new ReactiveVar
   @rxCivility.set ''
   @autorun (computation) =>
@@ -8,9 +8,7 @@ Template.others.created = ->
       $selectCustom.addClass 'filled'
   @rxActiveDot = new ReactiveVar
 
-Template.others.rendered = -> (new WOW).init()
-
-Template.others.helpers
+Template.recipes.helpers
   selectedCivility: -> Template.instance().rxCivility.get()
   civility: -> ['Mr', 'Mrs', 'Ms', 'Dr']
   dotExample: -> [
@@ -22,7 +20,7 @@ Template.others.helpers
   ]
   dotActive: -> 'active' if Template.instance().rxActiveDot.get() is @id
 
-Template.others.events
+Template.recipes.events
   'click .select-custom li': (e, t) ->
     t.rxCivility.set e.target.textContent
   'click [data-role=\'dot-style\'] a': (e, t) ->

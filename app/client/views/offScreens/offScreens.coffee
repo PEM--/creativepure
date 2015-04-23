@@ -12,7 +12,5 @@ Template.offScreens.created = ->
       setTimeout (-> el.addClass 'open'), 25
     @expanded = not @expanded
 
-Template.offScreens.rendered = -> (new WOW).init()
-
 Template.offScreens.events
   'click .morph-button': (e, t) -> t.toggle()

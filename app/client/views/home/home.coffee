@@ -1,5 +1,3 @@
-Template.home.rendered = -> (new WOW).init()
-
 Template.home.events
   'click button': (e, t) ->
     e.preventDefault()

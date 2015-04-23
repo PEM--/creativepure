@@ -1,4 +1,19 @@
 @import 'client/styles/*.import'
+@import s(basePath, input)
+
+article[data-role='textInputs']
+  figure
+    cpInput(bgColor, textColor, brandColor)
+    &[data-role='jiro']
+      cpInputJiro(textColor, brandColor)
+    &[data-role='haruki']
+      padding-top 3em
+      cpInputHaruki(textColor, brandColor)
+    &[data-role='hoshi']
+      cpInputHoshi(brandColor)
+    &[data-role='yoko']
+      cpInputYoko(bgColor, brandColor)
+
 @import s(basePath, buttonSmall)
 @import s(basePath, buttonCreative)
 @import s(basePath, buttonInspiration)
@@ -26,3 +41,18 @@ article[data-role='buttons']
       cpButtonInspirationUjarak(bgColor, brandColor)
     &[data-content='winoma']
       cpButtonInspirationWinoma(bgColor, brandColor)
+
+@import s(basePath, checkbox)
+
+article[data-role='checkbox']
+  figure
+    cpCheckbox(bgColor, brandSuccess, brandDanger, brandColor)
+    span.checkbox
+      width 150px
+
+@import s(basePath, selectCustom)
+
+article[data-role='select']
+  figure
+    display flex
+    cpSelectCustom(bgColor, brandColor)
