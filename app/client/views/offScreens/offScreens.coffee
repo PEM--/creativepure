@@ -1,7 +1,6 @@
 Template.offScreens.created = ->
   @toggle = =>
-    buttonPos = @$('button')[0].getBoundingClientRect()
-    console.log @$('button')
+    buttonPos = (@$ 'button')[0].getBoundingClientRect()
     el = @$ '.morph-button'
     @$('.morph-content').css
       left: "#{buttonPos.left}px"

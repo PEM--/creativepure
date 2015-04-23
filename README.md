@@ -23,7 +23,7 @@ Use buttons in many shapes:<br>
 ![button2](https://raw.githubusercontent.com/PEM--/creativepure/master/doc/img/button2.png)<br>
 ![button3](https://raw.githubusercontent.com/PEM--/creativepure/master/doc/img/button3.png)
 
-Reusable effects:<br>
+Apply reusable effects:<br>
 ![gooey](https://raw.githubusercontent.com/PEM--/creativepure/master/doc/img/gooey.gif)
 
 And much more...
