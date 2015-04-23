@@ -3,14 +3,16 @@ Router.configure
   loadingTemplate: 'loading'
   notFoundTemplate: 'notFound'
   onBeforeAction: ->
-    ($ window).scrollTop 0
+    ($ 'body >section').css 'opacity', 0
     @next()
-    (new WOW).init()
   onAfterAction: ->
+    ($ window).scrollTop 0
+    (new WOW).init()
     Meteor.setTimeout ->
+      ($ 'body >section').css 'opacity', 1
       $('pre code').each (i, node) ->
         hljs.highlightBlock node
-    , 16
+    , 64
 
 # Route declaration
 Router.map ->
