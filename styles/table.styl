@@ -1,9 +1,8 @@
 @import 'jeet'
 @import 'client/styles/*.import'
 
-borderStyle = 1px solid brandColor
-
-table
+cpTable(brandColor, bgColor)
+  borderStyle = 1px solid brandColor
   table(false, false, false)
   th, td
     border-top: borderStyle
@@ -47,37 +46,3 @@ table
   thead:first-child
     background-color brandColor
     color bgColor
-
-  // button
-  //   padding .6em
-  //   width 40px
-  //   margin-right 1em
-  //   &:before, &:hover:before
-  //     text-align center
-  //     width @width - 2px
-  //     line-height 1.2em
-  //     font-size 1em
-  //     color bgColor
-  //     background-color brandColor
-  //     border-radius roundCorner
-  //   &:hover:before
-  //     background-color darken(brandColor, 30%)
-  //
-  // button[data-role='view']
-  //   &:before
-  //     content '\f200'
-  // button[data-role='modify']
-  //   &:before
-  //     content '\f044'
-  // button[data-role='copy']
-  //   &:before
-  //     content '\f0c5'
-  // button[data-role='remove']
-  //   border 1px solid brandDanger
-  //   &:before
-  //     background-color brandDanger
-  //     content '\f014'
-  //   &:hover
-  //     border 1px solid darken(brandDanger, 30%)
-  //     &:before
-  //       background-color darken(brandDanger, 30%)

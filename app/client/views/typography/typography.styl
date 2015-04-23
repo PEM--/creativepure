@@ -1,7 +1,7 @@
 @import 'client/styles/*.import'
-@import s(basePath, links)
 
 article[data-role='links']
+  @import s(basePath, links)
   ul
     inline-list()
     display flex
@@ -50,3 +50,9 @@ article[data-role='long-shadow']
       cpLongShadow('box', lighten(dimgray, 30%), 50, true, true)
       >p, >p::before
         cpLongShadow('text', lighten(dimgray, 20%), 30)
+
+article[data-role='table']
+  @import s(basePath, table)
+  figure
+    table
+      cpTable(brandColor, bgColor)

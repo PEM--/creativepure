@@ -39,3 +39,22 @@ article.wow.fadeInDown(data-role='long-shadow')
   pre: code.jade.
     .long-shadow
       p.fa.fa-twitter
+
+article.wow.fadeInDown(data-role='table')
+  h1 Table
+  p Simple table customized with your main color scheme.
+  figure
+    table
+      thead: tr
+        each thead
+          td= this
+      tbody
+        each tbody
+          tr
+            each this.values
+              td= this
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, table)
+    table
+      cpTable(brandColor, bgColor)
