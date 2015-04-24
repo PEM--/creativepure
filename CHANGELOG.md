@@ -1,5 +1,9 @@
+## 0.1.14 - Loader
+Recipes:
+* Loader
+
 ## 0.1.13 - Gooey
-Others:
+Recipes:
 * Gooey effect
 
 ## 0.1.12 - Typography

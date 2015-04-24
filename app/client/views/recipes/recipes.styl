@@ -1,8 +1,51 @@
 @import 'client/styles/*.import'
 
-@import s(basePath, goo)
+article[data-role='loader']
+  @import s(basePath, loader)
+  figure
+    height 11em
+    >div:nth-child(1)
+      max-width 400px
+      display flex
+      flex-wrap wrap
+      justify-content space-around
+      >div
+        display inline-block
+        &:nth-child(1)
+          cpLoaderFade(brandColor, bgColor, 3em)
+        &:nth-child(2)
+          cpLoaderFade(red, bgColor, 3em)
+        &:nth-child(3)
+          cpLoaderFade(green, bgColor, 3em)
+    >div:nth-child(2)
+      display flex
+      flex-wrap wrap
+      justify-content space-around
+      >div
+        size 11em 6em
+        margin .5em
+        padding .5em
+        border 1px solid brandColor
+        border-radius roundCorner
+        >span
+          font-weight bold
+          display block
+          width 100%
+        >div
+          display block
+          width 100%
+          margin auto auto
+        .loader-round-fading
+          cpLoaderFade(brandColor, bgColor, 3em)
+        .loader-3-squares
+          margin-top .5em
+          cpLoaderThreeSquares(brandColor, 3em)
+
+
+
 
 article[data-role='goo']
+  @import s(basePath, goo)
   figure
     text-align center
     .menu

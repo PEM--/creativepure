@@ -1,0 +1,54 @@
+cpLoaderThreeSquares(brandColor, loaderSize=5em)
+  background brandColor
+  animation cp-loader-3-square 1s infinite ease-in-out
+  size loaderSize*.2 loaderSize*.8
+  position relative
+  transform translateZ(0)
+  animation cp-loader-3-squares 1s infinite ease-in-out
+  animation-delay -0.16s
+  &:before, &:after
+    background brandColor
+    animation cp-loader-3-squares 1s infinite ease-in-out
+    size loaderSize*.2 loaderSize*.8
+    absolute top
+    content ''
+  &:before
+    left -(loaderSize*.3)
+    animation-delay 2*@animation-delay
+  &:after
+    left loaderSize*.3
+  @keyframes cp-loader-3-squares
+    0%, 80%, 100%
+      transform none
+    40%
+      transform scaleY(1.25)
+
+cpLoaderFade(brandColor, bgColor, loaderSize=5em)
+  size loaderSize
+  border-radius 50%
+  background brandColor
+  background linear-gradient(to right, brandColor 30%, rgba(brandColor, 0) 60%)
+  position relative
+  animation cp-loader-fade-anim 1.4s infinite linear
+  transform translateZ(0)
+  &:before
+    size 50%
+    background brandColor
+    border-radius 100% 0 0 0
+    absolute top left
+    content ''
+  &:after
+    background bgColor
+    size 75%
+    border-radius 50%
+    content ''
+    margin auto
+    absolute top left
+    bottom 0
+    right 0
+
+  @keyframes cp-loader-fade-anim
+    0%
+      transform rotate(0deg)
+    100%
+      transform rotate(360deg)

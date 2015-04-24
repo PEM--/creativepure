@@ -27,6 +27,7 @@ Package.onUse(function(api) {
       'styles/goo.styl',
       'styles/input.styl',
       'styles/ironprogress.styl',
+      'styles/loader.styl',
       'styles/links.styl',
       'styles/longShadow.styl',
       'styles/main.styl',
