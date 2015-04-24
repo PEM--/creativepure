@@ -3,12 +3,11 @@
 article[data-role='loader']
   @import s(basePath, loader)
   figure
-    height 11em
     >div:nth-child(1)
-      max-width 400px
       display flex
       flex-wrap wrap
       justify-content space-around
+      text-align center
       >div
         display inline-block
         &:nth-child(1)
@@ -40,9 +39,8 @@ article[data-role='loader']
         .loader-3-squares
           margin-top .5em
           cpLoaderThreeSquares(brandColor, 3em)
-
-
-
+        .loader-round-async
+          cpRoundAsync(brandColor, bgColor, 3em)
 
 article[data-role='goo']
   @import s(basePath, goo)

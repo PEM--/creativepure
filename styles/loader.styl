@@ -19,9 +19,36 @@ cpLoaderThreeSquares(brandColor, loaderSize=5em)
     left loaderSize*.3
   @keyframes cp-loader-3-squares
     0%, 80%, 100%
-      transform none
+      transform scaleY(0.75)
     40%
       transform scaleY(1.25)
+
+cpRoundAsync(brandColor, bgColor, loaderSize=5em)
+  position relative
+  size loaderSize
+  border-radius 50%
+  box-shadow inset 0 0 0 (loaderSize*.1) brandColor
+  transform translateZ(0)
+  &:before, &:after
+    content ''
+    size loaderSize*0.52 loaderSize*1.02
+  &:before
+    background bgColor
+    border-radius (loaderSize*1.02) 0 0 (loaderSize*1.02)
+    absolute top -(loaderSize*.01) left -(loaderSize*.01)
+    transform-origin (loaderSize*.52) (loaderSize*.51)
+    animation cp-loader-roundasync-anim 2s infinite ease 1.5s
+  &:after
+    background bgColor
+    border-radius 0 (loaderSize*1.02) (loaderSize*1.02) 0
+    absolute top -(loaderSize*.01) left (loaderSize*.51)
+    transform-origin 0 (loaderSize*.51)
+    animation cp-loader-roundasync-anim 2s infinite ease
+  @keyframes cp-loader-roundasync-anim
+    0%
+      transform none
+    to
+      transform rotate(360deg)
 
 cpLoaderFade(brandColor, bgColor, loaderSize=5em)
   size loaderSize
@@ -46,7 +73,6 @@ cpLoaderFade(brandColor, bgColor, loaderSize=5em)
     absolute top left
     bottom 0
     right 0
-
   @keyframes cp-loader-fade-anim
     0%
       transform rotate(0deg)
