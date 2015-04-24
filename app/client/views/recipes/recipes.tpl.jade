@@ -20,6 +20,16 @@ article.wow.fadeInDown(data-role='loader')
       div
         span Round async
         .loader-round-async
+  p Usage in <b>Stylus</b>
+  pre: code.stylus.
+    @import s(basePath, loader)
+    div
+      // For the round fading
+      cpLoaderFade(brandColor, bgColor, 3em)
+      // For the 3 squares
+      cpLoaderThreeSquares(brandColor, 3em)
+      // For the round async
+      cpRoundAsync(brandColor, bgColor, 3em)
 
 article.wow.fadeInDown(data-role='iron-router')
   h1 Iron router
