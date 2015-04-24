@@ -2,6 +2,8 @@ article.wow.fadeInDown(data-role='loader')
   h1 1-div loaders
   blockquote Inspired by 
     cite: a(href='http://projects.lukehaas.me/css-loaders/', target='_blank') @lukehaas
+    | and
+    cite: a(href='http://codepen.io/teodormoq/pen/WbXRWj', target='_blank') Codepen.io  
   p Handy CSS loaders in one <code>div</code> easily customized with you color scheme.
   figure
     // Multi-colors
@@ -15,21 +17,26 @@ article.wow.fadeInDown(data-role='loader')
         span Round fading
         .loader-round-fading
       div
-        span 3 squares
-        .loader-3-squares
+        span 3 bars
+        .loader-3-bars
       div
         span Round async
         .loader-round-async
+      div
+        span Bouncing square
+        .loader-bouncing-square
   p Usage in <b>Stylus</b>
   pre: code.stylus.
     @import s(basePath, loader)
     div
       // For the round fading
       cpLoaderFade(brandColor, bgColor, 3em)
-      // For the 3 squares
-      cpLoaderThreeSquares(brandColor, 3em)
+      // For the 3 bars
+      cpLoaderThreeBars(brandColor, 3em)
       // For the round async
-      cpRoundAsync(brandColor, bgColor, 3em)
+      cpLoaderRoundAsync(brandColor, bgColor, 3em)
+      // For the bouncing square
+      cpLoaderBouncingSquare(brandColor, bgColor, 3em)
 
 article.wow.fadeInDown(data-role='iron-router')
   h1 Iron router

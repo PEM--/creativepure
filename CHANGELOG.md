@@ -1,6 +1,6 @@
-## 0.1.14 - Loader
+## 0.1.14 & 0.1.15 - Loaders
 Recipes:
-* Loader
+* Loaders
 
 ## 0.1.13 - Gooey
 Recipes:

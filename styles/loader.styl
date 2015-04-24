@@ -1,4 +1,4 @@
-cpLoaderThreeSquares(brandColor, loaderSize=5em)
+cpLoaderThreeBars(brandColor, loaderSize=5em)
   background brandColor
   animation cp-loader-3-square 1s infinite ease-in-out
   size loaderSize*.2 loaderSize*.8
@@ -6,12 +6,14 @@ cpLoaderThreeSquares(brandColor, loaderSize=5em)
   transform translateZ(0)
   animation cp-loader-3-squares 1s infinite ease-in-out
   animation-delay -0.16s
+  border-radius 1em
   &:before, &:after
     background brandColor
     animation cp-loader-3-squares 1s infinite ease-in-out
     size loaderSize*.2 loaderSize*.8
     absolute top
     content ''
+    border-radius 1em
   &:before
     left -(loaderSize*.3)
     animation-delay 2*@animation-delay
@@ -23,7 +25,7 @@ cpLoaderThreeSquares(brandColor, loaderSize=5em)
     40%
       transform scaleY(1.25)
 
-cpRoundAsync(brandColor, bgColor, loaderSize=5em)
+cpLoaderRoundAsync(brandColor, bgColor, loaderSize=5em)
   position relative
   size loaderSize
   border-radius 50%
@@ -78,3 +80,37 @@ cpLoaderFade(brandColor, bgColor, loaderSize=5em)
       transform rotate(0deg)
     100%
       transform rotate(360deg)
+
+cpLoaderBouncingSquare(brandColor, bgColor, loaderSize=5em)
+  display inline-block
+  size loaderSize
+  relative top left 40%
+  &:after
+    content ''
+    size .7*loaderSize
+    background brandColor
+    animation cp-loader-bouncing-square .5s linear infinite
+    absolute top left
+    border-radius .05*loaderSize
+  &:before
+    content ''
+    size .7*loaderSize .1*loaderSize
+    background darken(bgColor, 20%)
+    animation cp-loader-bouncing-square-shadow .5s linear infinite
+    absolute bottom left
+    border-radius 50%
+  @keyframes cp-loader-bouncing-square
+    17%
+      border-bottom-right-radius .1*loaderSize
+    25%
+      transform translateY(.1*loaderSize) rotateZ(22.5deg)
+    50%
+      transform scaleY(.9) translateY(.2*loaderSize) rotateZ(45deg)
+      border-bottom-right-radius 40px
+    75%
+      transform translateY(.3*loaderSize) rotateZ(67.5deg)
+    100%
+      transform translateY(0) rotateZ(90deg)
+  @keyframes cp-loader-bouncing-square-shadow
+    50%
+      transform scaleX(1.2)
