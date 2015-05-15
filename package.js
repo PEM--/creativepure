@@ -1,6 +1,6 @@
 Package.describe({
   name: 'pierreeric:creativepure',
-  version: '0.1.15',
+  version: '0.1.16',
   // Brief, one-line summary of the package.
   summary: 'A set of styles all written with Stylus and inspired from Codrops.',
   // URL to the Git repository containing the source code for this package.
