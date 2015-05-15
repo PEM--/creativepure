@@ -13,7 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   // Required packages
-  api.use(['coffee:script@1.0.3', 'templating', 'mquandalle:jade@0.4.1']);
+  api.use(['coffeescript', 'templating', 'mquandalle:jade@0.4.1']);
   // Stylus files
   api.addFiles(
     [
